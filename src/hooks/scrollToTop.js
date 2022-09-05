@@ -1,6 +1,6 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import React, { useEffect } from "react";
-import { scrollWrapper } from "./scrollWrapper";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { withRouter } from "./scrollWrapper";
 // export const scrollToTop = ({ children }) => {
 //   window.scrollTo({
 //     top: 0,
@@ -12,7 +12,7 @@ import { scrollWrapper } from "./scrollWrapper";
 //     });
 //   });
 // };
-const scrollToTop = ({ children }) => {
+const ScrollToTop = ({ children }) => {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo({
@@ -24,4 +24,4 @@ const scrollToTop = ({ children }) => {
   return children || null;
 };
 
-export default scrollWrapper(scrollToTop);
+export default withRouter(ScrollToTop);
