@@ -49,6 +49,11 @@ const FirebaseCard = () => {
           </div>
         </div>
       </div>
+      <div className="flex text-blue-500 justify-end mt-4">
+        <a href="" className="hover:underline">
+          See all Release & Monitor features
+        </a>
+      </div>
     </>
   );
 };
