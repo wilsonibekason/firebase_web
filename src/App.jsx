@@ -119,8 +119,6 @@ const App = () => {
         </div>
         <div className="min-h-[300vh]  phone:px-4 tablet:px-4 desktop:px-40 Xdesktop:px-40 ">
           <FirebaseCard />
-          <FirebaseCard />
-          <FirebaseCard />
         </div>
       </div>
     </div>
