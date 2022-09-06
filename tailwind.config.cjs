@@ -8,7 +8,16 @@ module.exports = {
         tablet: "768px",
         laptop: "1024px",
         desktop: "1280px",
-        "2xdesktop": "1536px",
+        Xdesktop: "1536px",
+      },
+      fontFamily: {
+        raleway: ["Raleway", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        playfair: ["Playfair", "sans-serif"],
+        robotoCondensed: ["RobotoCondensed", "sans-serif"],
+      },
+      fontSize: {
+        xss: "12px",
       },
     },
   },

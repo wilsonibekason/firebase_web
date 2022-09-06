@@ -1,8 +1,10 @@
 import React from "react";
 import { Dropdown } from "primereact/dropdown";
+import { Badge } from "primereact/badge";
 import { useGlobalContext } from "../services/OnGlobalContext";
 import { projects } from "../utils/data";
-
+import { ImBell } from "react-icons/im";
+import { BsThreeDotsVertical } from "react-icons/bs";
 const Navbar = () => {
   const {
     GiHamburgerMenu,
@@ -11,14 +13,25 @@ const Navbar = () => {
     projectOptionTemplate,
     groupedItemTemplate,
     selectedProjectTemplate,
+    setVisibleSidebar,
+    visibleNav,
   } = useGlobalContext();
   return (
     <>
-      <nav className="flex flex-row justify-between">
+      <nav
+        className={`flex flex-row justify-between ${
+          !visibleNav ? "navbar-bg-initial" : "navbar-bg-final"
+        } sticky`}
+      >
         {/* left column */}
-        <div className="flex flex-row flex-1 items-center pl-4">
-          <GiHamburgerMenu className="text-sm md:text-2xl mr-3 md:hidden block" />
-          <div className="pr-20">
+        <div className="flex flex-row flex-1 items-center pl-1 md:pl-2 lg:pl-4">
+          <div className="flex lg:hidden">
+            <GiHamburgerMenu
+              className="text-lg md:text-2xl mr-0.5 md:mr-1 lg:mr-2"
+              onClick={() => setVisibleSidebar((prev) => !prev)}
+            />
+          </div>
+          <div className="pr-0 md:pr-20 lg:scroll-pr-20 rounded-tl-xl">
             <Dropdown
               value={selectedProject}
               options={projects}
@@ -31,12 +44,27 @@ const Navbar = () => {
               filterBy="name"
               filterInputAutoFocus
               placeholder="Select a project"
-              className="text-sm pr-20"
+              className="text-sm pr-20 font-robotoCondensed space-x-1 font-semibold capitalise"
             />
           </div>
         </div>
         {/* right column */}
-        <h1>i am right</h1>
+        <div className="flex flex-row gap-2 md:gap-3 lg:gap-4 items-center">
+          <div className="relative">
+            <ImBell className="font-bold text-2xl " />
+            <div className="absolute inset-y-0 right-2 flex items-center pl-1.5 bg-red-500 w-2 h-2 rounded-full"></div>
+          </div>
+          <div>
+            <BsThreeDotsVertical className="text-2xl" />
+          </div>
+          <div>
+            <img
+              src="https://lh3.googleusercontent.com/ogw/AOh-ky0Y0GWS8yodSDtiKJ6FOlNqNxLYt0B--1EThip08A=s32-c-mo"
+              alt=""
+              className="phone:w-7 phone:h-7  tablet:w-8 tablet:h-8 Xdesktop:w-[34px] Xdesktop:h-[34px] rounded-full "
+            />
+          </div>
+        </div>
       </nav>
     </>
   );

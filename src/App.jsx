@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { Sidebar } from "primereact/sidebar";
 import { Navbar } from "./components";
 import { useGlobalContext } from "./services/OnGlobalContext";
+import TabletSidebar from "./components/TabletSidebar";
+import "./App.css";
 const App = () => {
-  const { GiHamburgerMenu } = useGlobalContext();
+  const { GiHamburgerMenu, setVisibleSidebar, visibleSidebar } =
+    useGlobalContext();
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Dashboard", src: "Chart_fill" },
@@ -60,8 +64,16 @@ const App = () => {
           ))}
         </ul>
       </div>
+      {/* tablet sidebar  */}
+      <div className="block desktop:hidden target:block  Xdesktop:hidden">
+        <TabletSidebar />
+      </div>
+      {/*   */}
       <div className="h-screen flex-1 p-3 header-bg ">
         {/* header */}
+        <div className="">
+          <Navbar />
+        </div>
         <div
           className="bg-center bg-no-repeat"
           style={{
@@ -69,7 +81,6 @@ const App = () => {
             backgroundImage: `url("	https://www.gstatic.com/mobilesdk/190805_mobilesdk/illustration-b-waiting@2x.png")`,
           }}
         >
-          <Navbar />
           <div>
             <h1 className="text-2xl font-semibold min-h-[200vh]">Home Page</h1>
           </div>

@@ -7,6 +7,7 @@ import React, {
 } from "react";
 ///
 import { GiHamburgerMenu } from "react-icons/gi";
+import { ImBell } from "react-icons/im";
 import { ACTIONTYPES } from "./context/actions";
 import { firebaseReducer } from "./context/reducers";
 import GlobalContext from "./context/initialState";
@@ -18,8 +19,19 @@ export const GlobalProvider = ({ children }) => {
   // initialise action states
   const { TOOGLETABLETSIDEBAR } = ACTIONTYPES;
   const [selectedProject, setSelectedProject] = useState(null);
+  const [visibleSidebar, setVisibleSidebar] = useState(false);
+  const [visibleNav, setVisibleNav] = useState(false);
   const loadLazyContent = useRef(null);
   const [firebaseState, dispatch] = useReducer(firebaseReducer, {});
+  const scrollChange = () => {
+    if (window.screenY >= 392) {
+      setVisibleNav((prev) => !prev);
+    } else {
+      setVisibleNav(false);
+    }
+  };
+  /// callfunctiom
+  window.addEventListener("scroll", scrollChange);
   const toogleSidebar = () => {
     dispatch({
       type: TOOGLETABLETSIDEBAR,
@@ -29,17 +41,21 @@ export const GlobalProvider = ({ children }) => {
   const onProjectChange = (e) => setSelectedProject(e.value);
   const projectOptionTemplate = (option) => {
     return (
-      <div className="flex flex-start">
-        <img
-          alt={option.name}
-          src={chat}
-          onError={(e) =>
-            (e.target.src =
-              "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
-          }
-          className={`flag flag-${option.code.toLowerCase()}`}
-        />
-        <div>{option.name}</div>
+      <div className="  ">
+        <div className="flex items-center">
+          <img
+            alt={option.name}
+            src={chat}
+            onError={(e) =>
+              (e.target.src =
+                "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
+            }
+            className={`align-middle flag-${option.code.toLowerCase()}`}
+          />
+          <div className="font-raleway text-xss font-normal  text-gray-700 ">
+            {option.name}
+          </div>
+        </div>
       </div>
     );
   };
@@ -66,7 +82,7 @@ export const GlobalProvider = ({ children }) => {
   };
   const groupedItemTemplate = (option) => {
     return (
-      <div className="flex items-center ">
+      <div className="flex items-center bg-black">
         <img
           alt={option.label}
           src={chat}
@@ -85,12 +101,16 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         GiHamburgerMenu,
+        ImBell,
         toogleSidebar: toogleSidebar,
         projectOptionTemplate: projectOptionTemplate,
         groupedItemTemplate: groupedItemTemplate,
         onProjectChange,
         selectedProject: selectedProject,
         selectedProjectTemplate: selectedProjectTemplate,
+        setVisibleSidebar,
+        visibleSidebar,
+        visibleNav,
       }}
     >
       {children}
