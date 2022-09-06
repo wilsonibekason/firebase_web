@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { Navbar } from "./components";
+import { useGlobalContext } from "./services/OnGlobalContext";
 const App = () => {
+  const { GiHamburgerMenu } = useGlobalContext();
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Dashboard", src: "Chart_fill" },
@@ -13,11 +16,11 @@ const App = () => {
   ];
 
   return (
-    <div className="flex">
+    <div className="flex ">
       <div
         className={` ${
-          open ? "w-72" : "w-10 "
-        } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
+          open ? "w-72" : "w-20 "
+        } hidden md:hidden lg:block bg-dark-purple h-screen p-5  pt-8 relative duration-300`}
       >
         <img
           src="./src/assets/control.png"
@@ -57,10 +60,20 @@ const App = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex-1 p-7 border-2   border-dotted ">
-        <h1 className="text-2xl font-semibold border-4 border-solid border-spacing-6 min-h-[200vh]">
-          Home Page
-        </h1>
+      <div className="h-screen flex-1 p-3 header-bg ">
+        {/* header */}
+        <div
+          className="bg-center bg-no-repeat"
+          style={{
+            backgroundPositionX: "37%",
+            backgroundImage: `url("	https://www.gstatic.com/mobilesdk/190805_mobilesdk/illustration-b-waiting@2x.png")`,
+          }}
+        >
+          <Navbar />
+          <div>
+            <h1 className="text-2xl font-semibold min-h-[200vh]">Home Page</h1>
+          </div>
+        </div>
       </div>
     </div>
   );
