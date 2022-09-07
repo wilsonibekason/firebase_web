@@ -8,6 +8,10 @@ import React, {
 ///
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImBell } from "react-icons/im";
+import { FaHome } from "react-icons/fa";
+import { FcSettings } from "react-icons/fc";
+import { BiRightArrow } from "react-icons/bi";
+import { AiOutlineSetting } from "react-icons/ai";
 import { ACTIONTYPES } from "./context/actions";
 import { firebaseReducer } from "./context/reducers";
 import GlobalContext from "./context/initialState";
@@ -30,6 +34,10 @@ export const GlobalProvider = ({ children }) => {
       setVisibleNav(false);
     }
   };
+
+  // firebase logo
+  const firebaseLogo =
+    "https://icon2.cleanpng.com/20180609/ryh/kisspng-firebase-cloud-messaging-google-cloud-messaging-api-as-a-service-5b1bf782ac0ca2.2103995315285594907047.jpg";
   /// callfunctiom
   window.addEventListener("scroll", scrollChange);
   const toogleSidebar = () => {
@@ -111,6 +119,11 @@ export const GlobalProvider = ({ children }) => {
         setVisibleSidebar,
         visibleSidebar,
         visibleNav,
+        firebaseLogo,
+        FaHome,
+        FcSettings,
+        BiRightArrow,
+        AiOutlineSetting,
       }}
     >
       {children}

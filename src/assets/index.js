@@ -1,3 +1,3 @@
 import chat from "./Chat.png";
-
-export { chat };
+import firebaseLogo from "./firebaselogo.png";
+export { chat, firebaseLogo };

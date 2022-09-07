@@ -371,3 +371,13 @@ background-color: var(--fire-color-featurebar-bg);
 .header-text{
   color: var(--fire-color-header-sm-font)
 }
+
+.sidetext-color{
+  color: #03a9f4;
+}
+.invert{
+  filter: invert(1);
+}
+.div:hover{
+  background-color: #1a73e8;
+}
