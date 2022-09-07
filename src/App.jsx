@@ -347,26 +347,46 @@ const App = () => {
             </div>
           </div>
           {/* badge container  */}
-          <ul className={` ${!open ? "pl-2 pt-1" : "p-5 pt-4"}`}>
-            {Menus.map((Menu, index) => (
-              <li
-                key={index}
-                className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-3" : "mt-2"} ${
-                  index === 0 && "bg-light-white"
-                } `}
-              >
-                <img
-                  src={`./src/assets/${Menu.src}.png`}
-                  className="w-5 h-5 object-cover"
-                />
-                <span
-                  className={`${!open && "hidden"} origin-left duration-200`}
-                >
-                  {Menu.title}
-                </span>
-              </li>
-            ))}
+          <ul className={` ${open ? "hidden" : " block p-3 pt-4"}`}>
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center hover:bg-gray-900 `}
+            >
+              <FaHome size={20} />
+            </li>
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center ${styles.ulbg} `}
+            >
+              <AiOutlineSetting size={20} />
+            </li>
+            <div className="w-full  border-[0.0003px] border-gray-500" />
+
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center ${styles.ulbg} `}
+            >
+              <MdPeopleOutline size={20} />
+            </li>
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center ${styles.ulbg} `}
+            >
+              <FaIndustry size={20} />
+            </li>
+            <div className="w-full  border-[0.0003px] border-gray-500" />
+
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center ${styles.ulbg} `}
+            >
+              <AiOutlineMenu size={20} />
+            </li>
+            <div className="w-full  border-[0.0003px] border-gray-500" />
+
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center ${styles.ulbg} `}
+            >
+              <AiOutlineArrowRight
+                size={20}
+                onClick={() => setOpen((prev) => !prev)}
+              />
+            </li>
           </ul>
         </div>
         {/* end of scrollable container  */}
