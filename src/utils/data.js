@@ -1,3 +1,15 @@
+import { IoMdPeople } from "react-icons/io";
+import {
+  BsShieldCheck,
+  BsFillCloudSnowFill,
+  BsCardChecklist,
+} from "react-icons/bs";
+import { ImDatabase } from "react-icons/im";
+import { GiWorld } from "react-icons/gi";
+import { GrDocumentPerformance } from "react-icons/gr";
+import { RiFileSettingsLine } from "react-icons/ri";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { MdOutlineEventNote } from "react-icons/md";
 export const projects = [
   { name: "diarryApp", code: "AU" },
   { name: "learnChatApp", code: "EF" },
@@ -8,6 +20,11 @@ export const projects = [
   { name: "amazonCheckout", code: "RT" },
 ];
 
+// const db = <ImDatabase />;
+// const check = <BsCardChecklist />;
+// const dash = <MdOutlineDashboardCustomize />;
+// const setting = <RiFileSettingsLine />;
+// const world = <GiWorld />;
 export const sidebarDropdown = [
   {
     name: "Authentication",
@@ -21,36 +38,13 @@ export const sidebarDropdown = [
     name: "Firebase Database",
     icon: "",
   },
-  {
-    name: "Realtime Database",
-    icon: "",
-  },
-  {
-    name: "Extensions",
-    icon: "",
-  },
+
   {
     name: "Storage",
     icon: "",
   },
   {
     name: "Hosting",
-    icon: "",
-  },
-  {
-    name: "Functions",
-    icon: "",
-  },
-  {
-    name: "Machine Learning",
-    icon: "",
-  },
-  {
-    name: "Remote Config",
-    icon: "",
-  },
-  {
-    name: "Cloud Messaginhg",
     icon: "",
   },
 ];

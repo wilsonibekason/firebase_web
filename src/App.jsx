@@ -6,7 +6,7 @@ import { Navbar } from "./components";
 import { useGlobalContext } from "./services/OnGlobalContext";
 import TabletSidebar from "./components/TabletSidebar";
 import "./App.css";
-import { FirebaseCard } from "./components/overview";
+import { DropdownContainer, FirebaseCard } from "./components/overview";
 import { firebaseLogo } from "./assets";
 import styles from "./styles/firebaseCustomStyles";
 const App = () => {
@@ -25,11 +25,16 @@ const App = () => {
     AiOutlineMenu,
     FaCubes,
     AiOutlineArrowLeft,
+    AiOutlineArrowRight,
     AiOutlineArrowDown,
     GiWorld,
     AiOutlineArrowUp,
     setDropdown,
     dropdown,
+    buildDropdown,
+    setBuildDropdown,
+    releaseDropdown,
+    setReleaseDropdown,
   } = useGlobalContext();
   const [open, setOpen] = useState(true);
   console.log(toogleSidebar);
@@ -174,24 +179,35 @@ const App = () => {
               project categories
             </h4>
             {/* contanier trigger */}
+            {/* <DropdownContainer /> */}
             <div
               className="px-4 bg-gray-900 flex justify-between rounded-t-lg py-3 focus:bg-gray-700 hover:bg-gray-700"
               onClick={() => setDropdown((prev) => !prev)}
             >
               <div>
                 <h4 className="font-raleway font-semibold text-sm text-white capitalize">
-                  build
+                  Analytics
                 </h4>
               </div>
               <div>{!dropdown ? arrow : <AiOutlineArrowUp />}</div>
             </div>
             {/* hidden containrer contents */}
             <div
-              className={`flex flex-col px-4 bg-gray-900 rounded-b-lg py-3  space-y-4 transition-all duration-300 ease-linear delay-300 ${
+              className={`flex flex-col bg-gray-900 ${
+                dropdown || releaseDropdown ? "" : "rounded-b-lg"
+              }  py-3  transition-all duration-300 ease-linear delay-300 ${
                 dropdown ? "block " : "hidden"
               }`}
             >
-              <div className="flex flex-row gap-x-4 items-center">
+              <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div>
+                  <GiWorld />
+                </div>
+                <div>
+                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
+                </div>
+              </div>
+              <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
                 <div>
                   <GiWorld />
                 </div>
@@ -200,7 +216,36 @@ const App = () => {
                 </div>
               </div>
               {/*  */}
-              <div className="flex flex-row gap-x-4 items-center">
+            </div>
+            {/* hidden containrer contents */}
+            <div className="w-full  border-[0.0003px] border-gray-500" />
+            {/* contanier trigger */}
+            <div
+              className="px-4 bg-gray-900 flex justify-between py-3 focus:bg-gray-700 hover:bg-gray-700"
+              onClick={() => setReleaseDropdown((prev) => !prev)}
+            >
+              <div>
+                <h4 className="font-raleway font-semibold text-sm text-white capitalize">
+                  release & monitor
+                </h4>
+              </div>
+              <div>
+                {!releaseDropdown ? (
+                  <AiOutlineArrowDown />
+                ) : (
+                  <AiOutlineArrowUp />
+                )}
+              </div>
+            </div>
+            {/* hidden containrer contents */}
+            <div
+              className={`flex flex-col bg-gray-900 ${
+                dropdown || releaseDropdown ? "" : "rounded-b-lg"
+              }  py-3  transition-all duration-300 ease-linear delay-300 ${
+                releaseDropdown ? "block " : "hidden"
+              }`}
+            >
+              <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
                 <div>
                   <GiWorld />
                 </div>
@@ -208,13 +253,25 @@ const App = () => {
                   <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
                 </div>
               </div>
+              <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div>
+                  <GiWorld />
+                </div>
+                <div>
+                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
+                </div>
+              </div>
+              {/*  */}
             </div>
             {/* hidden containrer contents */}
-            <div className="w-full h-px border-[0.001px] border-white" />
+            <div className="w-full h-px border-[0.001px] border-gray-600" />
+
             {/* contanier trigger */}
             <div
-              className="px-4 bg-gray-900 flex justify-between rounded-b-lg py-3 focus:bg-gray-700 hover:bg-gray-700"
-              onClick={() => setDropdown((prev) => !prev)}
+              className={`px-4 bg-gray-900 flex justify-between ${
+                !buildDropdown ? "rounded-b-lg" : ""
+              }  py-3 focus:bg-gray-700 hover:bg-gray-700 `}
+              onClick={() => setBuildDropdown((prev) => !prev)}
             >
               <div>
                 <h4 className="font-raleway font-semibold text-sm text-white capitalize">
@@ -222,15 +279,26 @@ const App = () => {
                 </h4>
               </div>
               <div>
-                {!dropdown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
+                {!buildDropdown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
               </div>
             </div>
             {/* hidden containrer contents */}
             <div
-              className={`flex flex-col px-4 bg-gray-900 rounded-b-lg py-3  space-y-4 transition-all duration-300 ease-linear delay-300 border  border-t-gray-700
-              ${!open ? "block " : "hidden"}`}
+              className={`flex flex-col bg-gray-900 ${
+                dropdown || releaseDropdown ? "" : "rounded-b-lg"
+              } py-3  transition-all duration-300 ease-linear delay-300 ${
+                buildDropdown ? "block " : "hidden"
+              }`}
             >
-              <div className="flex flex-row gap-x-4 items-center">
+              <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div>
+                  <GiWorld />
+                </div>
+                <div>
+                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
+                </div>
+              </div>
+              <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
                 <div>
                   <GiWorld />
                 </div>
@@ -239,14 +307,6 @@ const App = () => {
                 </div>
               </div>
               {/*  */}
-              <div className="flex flex-row gap-x-4 items-center">
-                <div>
-                  <GiWorld />
-                </div>
-                <div>
-                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
-                </div>
-              </div>
             </div>
             {/* hidden containrer contents */}
           </div>
@@ -333,12 +393,22 @@ const App = () => {
 
         {/* spark container  */}
         {/* close arrow div */}
-        <div className={`flex justify-end items-center py-3 pr-5 `}>
+        <div
+          className={`flex justify-end items-center py-3 pr-5 ${
+            open ? "block" : "hidden"
+          }`}
+        >
           <AiOutlineArrowLeft
             size={20}
             className="text-gray-800 hover:text-white transition ease-in duration-100"
             onClick={() => setOpen((prev) => !prev)}
           />
+
+          {/* <AiOutlineArrowLeft
+            size={20}
+            className="text-gray-800 hover:text-white transition ease-in duration-100"
+            onClick={() => setOpen((prev) => !prev)}
+          /> */}
         </div>
         {/* close arrow div */}
         {/*  */}

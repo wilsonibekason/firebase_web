@@ -18,6 +18,7 @@ import {
   AiOutlineArrowLeft,
   AiOutlineArrowDown,
   AiOutlineArrowUp,
+  AiOutlineArrowRight,
 } from "react-icons/ai";
 import { MdPeopleOutline } from "react-icons/md";
 import { FaIndustry } from "react-icons/fa";
@@ -35,6 +36,9 @@ export const GlobalProvider = ({ children }) => {
   const [visibleSidebar, setVisibleSidebar] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [visibleNav, setVisibleNav] = useState(false);
+  const [buildDropdown, setBuildDropdown] = useState(false);
+  const [releaseDropdown, setReleaseDropdown] = useState(false);
+  const [engageDropdown, setEngageDropdown] = useState(false);
   const loadLazyContent = useRef(null);
   const [firebaseState, dispatch] = useReducer(firebaseReducer, {});
   const scrollChange = () => {
@@ -145,6 +149,14 @@ export const GlobalProvider = ({ children }) => {
         AiOutlineArrowUp,
         setDropdown,
         dropdown,
+        //////
+        buildDropdown,
+        setBuildDropdown,
+        releaseDropdown,
+        setReleaseDropdown,
+        engageDropdown,
+        setEngageDropdown,
+        AiOutlineArrowRight,
       }}
     >
       {children}
