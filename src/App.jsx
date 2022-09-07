@@ -18,6 +18,10 @@ const App = () => {
     FcSettings,
     BiRightArrow,
     AiOutlineSetting,
+    MdPeopleOutline,
+    FaIndustry,
+    AiOutlineEye,
+    AiOutlineMenu,
   } = useGlobalContext();
   const [open, setOpen] = useState(true);
   console.log(toogleSidebar);
@@ -65,7 +69,13 @@ const App = () => {
         {/* <hr className="w-full h-px text-gray-300" /> */}
         <div className="w-full h-px border-[0.001px] border-gray-900" />
         {/* scrollable sections */}
-        <div className="overflow-visible overflow-y-auto h-[50vh]   scrollbar-thumb-gray-400 scrollbar-thin scrollbar-thumb-rounded ">
+        <div
+          className={` h-[50vh] ${
+            !open
+              ? ""
+              : "scrollbar-thumb-gray-400 scrollbar-thin scrollbar-thumb-rounded overflow-visible overflow-y-auto"
+          }   `}
+        >
           <div
             className={`flex flex-row justify-between items-center transition-all ease-linear duration-100 ${
               !open ? "hidden scale-0" : "flex "
@@ -90,8 +100,66 @@ const App = () => {
             </div>
           </div>
           {/* project overview section  */}
-
           <div className="w-full h-px border-[0.001px] border-gray-900" />
+
+          {/* project shortcuts sections */}
+          <div className={`py-4 ${open ? "block " : "hidden "}`}>
+            <h4 className="font-raleway font-medium text-xss text-gray-400  capitalize ml-4 mb-4">
+              project section
+            </h4>
+            <div className="mr-1.5 ml-2.5 space-y-2">
+              <div className="group">
+                <div
+                  className="flex items-center justify-between group-hover:bg-gray-900 
+                  transition-all duration-700 ease-linear delay-75 py-2.5 rounded-lg
+              "
+                >
+                  <div className="flex items-center pl-2">
+                    <MdPeopleOutline size={20} />
+                    <p className="font-raleway font-semibold text-xss text-gray-200 capitalize ml-2">
+                      authentication
+                    </p>
+                  </div>
+                  <div className=" mr-2 hidden group-hover:block">
+                    <AiOutlineMenu
+                      className="  transition-all duration-700 ease-linear delay-100"
+                      size={10}
+                    />
+                  </div>
+                  <div className="mr-2">
+                    <AiOutlineEye className="hidden group-hover:block   transition-all duration-700 ease-linear delay-100" />
+                  </div>
+                </div>
+              </div>
+              {/* sections 2 */}
+              <div className="group ">
+                <div
+                  className="flex items-center justify-between  group-hover:bg-gray-900 
+              transition-all duration-700 ease-linear delay-75 py-2.5 rounded-lg
+              "
+                >
+                  <div className="flex items-center pl-2">
+                    <FaIndustry />
+
+                    <p className="font-raleway font-semibold text-xss text-gray-200 capitalize ml-2">
+                      authentication
+                    </p>
+                  </div>
+                  <div className=" mr-2 hidden group-hover:block">
+                    <AiOutlineMenu
+                      className="  transition-all duration-700 ease-linear delay-100"
+                      size={10}
+                    />
+                  </div>
+                  <div className="mr-2">
+                    <AiOutlineEye className="hidden group-hover:block   transition-all duration-700 ease-linear delay-100" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full h-px border-[0.001px] border-gray-900" />
+          {/* endo of product section */}
 
           <ul className={` ${!open ? "pl-2 pt-1" : "p-5 pt-4"}`}>
             {Menus.map((Menu, index) => (
@@ -139,18 +207,18 @@ const App = () => {
               <h1 className="font-raleway font-semibold text-3xl header-text">
                 linkedin_app
               </h1>
-              <span className=" font-raleway font-semibold border border-solid border-gray-300 w-24 h-5 py-2.5 rounded-xl flex justify-center items-center text-xss bg-blue-700 capitalize text-white shadow">
+              <span className=" font-raleway font-semibold border border-solid border-gray-300 w-24 h-5 py-2.5 rounded-xl flex justify-center items-center text-xss bg-blue-700 capitalize text-white shadow hover:bg-blue-300 transition ease-in duration-150 focus:bg-blue-300">
                 spark plan
               </span>
             </div>
             <div className="flex flex-1 flex-row items-center mt-3 gap-4">
-              <span className="flex w-36 h-5 py-4 pr-2 rounded-2xl items-center gap-1  text-white font-raleway font-semibold text-sm bg-blue-700 ">
-                <div className="flex justify-center items-center bg-purple-600  rounded-full p-1.5">
+              <span className="flex w-36 h-5 py-4 pr-2 rounded-2xl items-center gap-1  text-white font-raleway font-semibold text-sm bg-blue-700 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900">
+                <div className="flex justify-center items-center bg-purple-600  rounded-full p-1.5 ">
                   <AiOutlinePlus className="text-white text-lg font-bold" />
                 </div>
                 linkedIn rebuilt
               </span>
-              <span className="flex w-28 h-5 py-4 rounded-2xl items-center text-white font-robotoCondensed font-normal text-sm bg-blue-700 capitalize px-4">
+              <span className="flex w-28 h-5 py-4 rounded-2xl items-center text-white font-robotoCondensed font-normal text-sm bg-blue-700 capitalize px-4 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900">
                 <div className="">
                   <AiOutlinePlus className="text-white text-xl font-black " />
                 </div>
