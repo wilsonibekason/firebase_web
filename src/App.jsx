@@ -22,6 +22,7 @@ const App = () => {
     FaIndustry,
     AiOutlineEye,
     AiOutlineMenu,
+    FaCubes,
   } = useGlobalContext();
   const [open, setOpen] = useState(true);
   console.log(toogleSidebar);
@@ -70,7 +71,7 @@ const App = () => {
         <div className="w-full h-px border-[0.001px] border-gray-900" />
         {/* scrollable sections */}
         <div
-          className={` h-[50vh] ${
+          className={` h-[78vh] ${
             !open
               ? ""
               : "scrollbar-thumb-gray-400 scrollbar-thin scrollbar-thumb-rounded overflow-visible overflow-y-auto"
@@ -101,7 +102,6 @@ const App = () => {
           </div>
           {/* project overview section  */}
           <div className="w-full h-px border-[0.001px] border-gray-900" />
-
           {/* project shortcuts sections */}
           <div className={`py-4 ${open ? "block " : "hidden "}`}>
             <h4 className="font-raleway font-medium text-xss text-gray-400  capitalize ml-4 mb-4">
@@ -142,7 +142,7 @@ const App = () => {
                     <FaIndustry />
 
                     <p className="font-raleway font-semibold text-xss text-gray-200 capitalize ml-2">
-                      authentication
+                      extensions
                     </p>
                   </div>
                   <div className=" mr-2 hidden group-hover:block">
@@ -160,7 +160,41 @@ const App = () => {
           </div>
           <div className="w-full h-px border-[0.001px] border-gray-900" />
           {/* endo of product section */}
-
+          <div className={` group ${open ? "block " : "hidden"}`}>
+            <div className="flex gap-x-4 items-center group-hover:bg-gray-900 pl-4 py-4">
+              <FaCubes />
+              <h4 className="font-raleway font-semibold text-xss text-gray-400 capitalize">
+                All products
+              </h4>
+            </div>
+          </div>
+          {/* badge container  */}
+          <div
+            className={`m-4 bg-gray-900 px-4 py-6 rounded-lg shadow-md space-y-4 ${
+              !open ? "hidden" : "block"
+            }`}
+          >
+            <div>
+              <h3 className="font-raleway font-semibold text-sm text-white ">
+                <span className="capitalize">customize</span> your nav!
+              </h3>
+            </div>
+            <div>
+              <p className="font-raleway font-semibold text-xss text-gray-200   leading-snug">
+                <span className="capitalize">you</span> can now focus your
+                console experience by customizing your navigation{" "}
+              </p>
+            </div>
+            <div className="flex flex-start items-center space-x-4">
+              <h4 className="font-raleway font-semibold text-sm text-blue-300 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100  ">
+                Learn more
+              </h4>
+              <h4 className="font-raleway font-semibold text-sm text-blue-300 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100 ">
+                Got it
+              </h4>
+            </div>
+          </div>
+          {/* badge container  */}
           <ul className={` ${!open ? "pl-2 pt-1" : "p-5 pt-4"}`}>
             {Menus.map((Menu, index) => (
               <li
@@ -183,6 +217,29 @@ const App = () => {
             ))}
           </ul>
         </div>
+        {/* end of scrollable container  */}
+        <div className="w-full h-px border-[0.001px] border-gray-900" />
+        {/* spark container  */}
+        <div
+          className={`flex justify-around py-2 ${open ? "block" : "hidden"}`}
+        >
+          <div className="flex flex-col">
+            <p className="font-raleway font-semibold text-xss text-gray-500 capitalize">
+              spark
+            </p>
+            <p className="text-gray-700 text-xss font-raleway capitalize">
+              no-cost $0/month{" "}
+            </p>
+          </div>
+          <div>
+            <p className="font-raleway font-semibold text-sm text-gray-400 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100">
+              upgrade
+            </p>
+          </div>
+        </div>
+        <div className="w-full h-px border-[0.001px] border-gray-900" />
+
+        {/* spark container  */}
         {/*  */}
       </div>
 

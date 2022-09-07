@@ -8,10 +8,12 @@ import React, {
 ///
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImBell } from "react-icons/im";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaCubes } from "react-icons/fa";
 import { FcSettings } from "react-icons/fc";
 import { BiRightArrow } from "react-icons/bi";
-import { AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineSetting, AiOutlineEye, AiOutlineMenu } from "react-icons/ai";
+import { MdPeopleOutline } from "react-icons/md";
+import { FaIndustry } from "react-icons/fa";
 import { ACTIONTYPES } from "./context/actions";
 import { firebaseReducer } from "./context/reducers";
 import GlobalContext from "./context/initialState";
@@ -124,6 +126,11 @@ export const GlobalProvider = ({ children }) => {
         FcSettings,
         BiRightArrow,
         AiOutlineSetting,
+        MdPeopleOutline,
+        FaIndustry,
+        AiOutlineEye,
+        AiOutlineMenu,
+        FaCubes,
       }}
     >
       {children}
