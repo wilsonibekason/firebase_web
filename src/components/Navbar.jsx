@@ -31,6 +31,9 @@ const Navbar = () => {
               onClick={() => setVisibleSidebar((prev) => !prev)}
             />
           </div>
+          <div className="font-raleway font-semibold text-sm  capitalize text-gray-300 block desktop:hidden target:block  Xdesktop:hidden">
+            overview
+          </div>
           <div className="pr-0 md:pr-20 lg:scroll-pr-20 rounded-tl-xl">
             <Dropdown
               value={selectedProject}
@@ -61,7 +64,7 @@ const Navbar = () => {
             <img
               src="https://lh3.googleusercontent.com/ogw/AOh-ky0Y0GWS8yodSDtiKJ6FOlNqNxLYt0B--1EThip08A=s32-c-mo"
               alt=""
-              className="phone:w-7 phone:h-7  tablet:w-8 tablet:h-8 Xdesktop:w-[34px] Xdesktop:h-[34px] rounded-full "
+              className="phone:w-6 phone:h-6  tablet:w-6 tablet:h-6 desktop:w-8 desktop:h-8 Xdesktop:w-[34px] Xdesktop:h-[34px] rounded-full "
             />
           </div>
         </div>

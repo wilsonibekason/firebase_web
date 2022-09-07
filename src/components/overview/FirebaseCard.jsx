@@ -18,10 +18,11 @@ const FirebaseCard = () => {
         {/* desktop:overflow-hidden Xdesktop:overflow-hidden */}
         <ImCancelCircle className="text-2xl font-bold text-gray-600" />
       </div>
-      <div className="w-full h-auto flex flex-col rounded-lg mt-4">
+      <div className="w-full h-auto flex flex-col mt-4 ">
         <img
           src="https://www.gstatic.com/mobilesdk/190913_mobilesdk/extensions_wide.png"
           alt=""
+          className="rounded-t-xl"
         />
         <div className="bg-white rounded-b-xl px-4 py-4 group-hover:shadow-xl">
           <p className="text-gray-800 text-xl font-robotoCondensed font-normal capitalize">
