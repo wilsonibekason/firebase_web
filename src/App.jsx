@@ -8,6 +8,7 @@ import TabletSidebar from "./components/TabletSidebar";
 import "./App.css";
 import { FirebaseCard } from "./components/overview";
 import { firebaseLogo } from "./assets";
+import styles from "./styles/firebaseCustomStyles";
 const App = () => {
   const {
     GiHamburgerMenu,
@@ -23,6 +24,12 @@ const App = () => {
     AiOutlineEye,
     AiOutlineMenu,
     FaCubes,
+    AiOutlineArrowLeft,
+    AiOutlineArrowDown,
+    GiWorld,
+    AiOutlineArrowUp,
+    setDropdown,
+    dropdown,
   } = useGlobalContext();
   const [open, setOpen] = useState(true);
   console.log(toogleSidebar);
@@ -36,13 +43,15 @@ const App = () => {
     { title: "Files ", src: "Folder", gap: true },
     { title: "Setting", src: "Setting" },
   ];
+
+  const arrow = <AiOutlineArrowDown />;
   // bg-dark-purple
   return (
     <div className="flex ">
       <div
         className={` ${
-          open ? "w-64" : "w-16"
-        } hidden md:hidden lg:block bg-[#00001a] h-auto   pt-1 relative duration-300`}
+          open ? "w-64 duration-300 " : "w-16 duration-1000 delay-500"
+        } hidden md:hidden lg:block bg-[#00001a] h-auto transition-all ease-linear   pt-1 relative  `}
       >
         <img
           src="./src/assets/control.png"
@@ -159,6 +168,89 @@ const App = () => {
             </div>
           </div>
           <div className="w-full h-px border-[0.001px] border-gray-900" />
+          {/* products categories section */}
+          <div className={`py-4 px-3 ${open ? "block" : "hidden"}`}>
+            <h4 className="font-raleway font-medium text-xss text-gray-400  capitalize ml-4 mb-4">
+              project categories
+            </h4>
+            {/* contanier trigger */}
+            <div
+              className="px-4 bg-gray-900 flex justify-between rounded-t-lg py-3 focus:bg-gray-700 hover:bg-gray-700"
+              onClick={() => setDropdown((prev) => !prev)}
+            >
+              <div>
+                <h4 className="font-raleway font-semibold text-sm text-white capitalize">
+                  build
+                </h4>
+              </div>
+              <div>{!dropdown ? arrow : <AiOutlineArrowUp />}</div>
+            </div>
+            {/* hidden containrer contents */}
+            <div
+              className={`flex flex-col px-4 bg-gray-900 rounded-b-lg py-3  space-y-4 transition-all duration-300 ease-linear delay-300 ${
+                dropdown ? "block " : "hidden"
+              }`}
+            >
+              <div className="flex flex-row gap-x-4 items-center">
+                <div>
+                  <GiWorld />
+                </div>
+                <div>
+                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
+                </div>
+              </div>
+              {/*  */}
+              <div className="flex flex-row gap-x-4 items-center">
+                <div>
+                  <GiWorld />
+                </div>
+                <div>
+                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
+                </div>
+              </div>
+            </div>
+            {/* hidden containrer contents */}
+            <div className="w-full h-px border-[0.001px] border-white" />
+            {/* contanier trigger */}
+            <div
+              className="px-4 bg-gray-900 flex justify-between rounded-b-lg py-3 focus:bg-gray-700 hover:bg-gray-700"
+              onClick={() => setDropdown((prev) => !prev)}
+            >
+              <div>
+                <h4 className="font-raleway font-semibold text-sm text-white capitalize">
+                  build
+                </h4>
+              </div>
+              <div>
+                {!dropdown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
+              </div>
+            </div>
+            {/* hidden containrer contents */}
+            <div
+              className={`flex flex-col px-4 bg-gray-900 rounded-b-lg py-3  space-y-4 transition-all duration-300 ease-linear delay-300 border  border-t-gray-700
+              ${!open ? "block " : "hidden"}`}
+            >
+              <div className="flex flex-row gap-x-4 items-center">
+                <div>
+                  <GiWorld />
+                </div>
+                <div>
+                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
+                </div>
+              </div>
+              {/*  */}
+              <div className="flex flex-row gap-x-4 items-center">
+                <div>
+                  <GiWorld />
+                </div>
+                <div>
+                  <h5 className={`${styles.paragraph} text-white`}>Hosting </h5>
+                </div>
+              </div>
+            </div>
+            {/* hidden containrer contents */}
+          </div>
+          {/* products categories section */}
           {/* endo of product section */}
           <div className={` group ${open ? "block " : "hidden"}`}>
             <div className="flex gap-x-4 items-center group-hover:bg-gray-900 pl-4 py-4">
@@ -240,6 +332,15 @@ const App = () => {
         <div className="w-full h-px border-[0.001px] border-gray-900" />
 
         {/* spark container  */}
+        {/* close arrow div */}
+        <div className={`flex justify-end items-center py-3 pr-5 `}>
+          <AiOutlineArrowLeft
+            size={20}
+            className="text-gray-800 hover:text-white transition ease-in duration-100"
+            onClick={() => setOpen((prev) => !prev)}
+          />
+        </div>
+        {/* close arrow div */}
         {/*  */}
       </div>
 

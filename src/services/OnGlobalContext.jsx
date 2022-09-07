@@ -6,12 +6,19 @@ import React, {
   useState,
 } from "react";
 ///
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu, GiWorld } from "react-icons/gi";
 import { ImBell } from "react-icons/im";
 import { FaHome, FaCubes } from "react-icons/fa";
 import { FcSettings } from "react-icons/fc";
 import { BiRightArrow } from "react-icons/bi";
-import { AiOutlineSetting, AiOutlineEye, AiOutlineMenu } from "react-icons/ai";
+import {
+  AiOutlineSetting,
+  AiOutlineEye,
+  AiOutlineMenu,
+  AiOutlineArrowLeft,
+  AiOutlineArrowDown,
+  AiOutlineArrowUp,
+} from "react-icons/ai";
 import { MdPeopleOutline } from "react-icons/md";
 import { FaIndustry } from "react-icons/fa";
 import { ACTIONTYPES } from "./context/actions";
@@ -26,6 +33,7 @@ export const GlobalProvider = ({ children }) => {
   const { TOOGLETABLETSIDEBAR } = ACTIONTYPES;
   const [selectedProject, setSelectedProject] = useState(null);
   const [visibleSidebar, setVisibleSidebar] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
   const [visibleNav, setVisibleNav] = useState(false);
   const loadLazyContent = useRef(null);
   const [firebaseState, dispatch] = useReducer(firebaseReducer, {});
@@ -131,6 +139,12 @@ export const GlobalProvider = ({ children }) => {
         AiOutlineEye,
         AiOutlineMenu,
         FaCubes,
+        AiOutlineArrowLeft,
+        AiOutlineArrowDown,
+        GiWorld,
+        AiOutlineArrowUp,
+        setDropdown,
+        dropdown,
       }}
     >
       {children}
