@@ -64,52 +64,60 @@ const App = () => {
         </div>
         {/* <hr className="w-full h-px text-gray-300" /> */}
         <div className="w-full h-px border-[0.001px] border-gray-900" />
-        {/* project overview section  */}
-        <div
-          className={`flex flex-row justify-between items-center transition-all ease-linear duration-100 ${
-            !open ? "hidden scale-0" : "flex "
-          }`}
-        >
+        {/* scrollable sections */}
+        <div className="overflow-visible overflow-y-auto h-[50vh]   scrollbar-thumb-gray-400 scrollbar-thin scrollbar-thumb-rounded ">
           <div
-            className={`flex items-center space-x-2 hover:bg-gray-900 focus:bg-gray-900 active:bg-gray-900 py-4 pl-5`}
+            className={`flex flex-row justify-between items-center transition-all ease-linear duration-100 ${
+              !open ? "hidden scale-0" : "flex "
+            }`}
           >
-            <FaHome className="sidetext-color " size={25} />
-            <h4 className="sidetext-color font-raleway font-medium  text-sm pr-6">
-              project overview
-            </h4>
-            <div className="h-6 border-x-[1px] border-gray-800 " />
-          </div>
-
-          <div className={`flex items-center group mr-5`}>
-            <AiOutlineSetting size={25} className="text-white" />
-            <BiRightArrow
-              className="text-white hidden group-hover:block invert-0 transition ease-in duration-300"
-              size={15}
-            />
-          </div>
-        </div>
-        <div className="w-full h-px border-[0.001px] border-gray-900" />
-
-        <ul className={` ${!open ? "pl-2 pt-1" : "p-5 pt-4"}`}>
-          {Menus.map((Menu, index) => (
-            <li
-              key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-3" : "mt-2"} ${
-                index === 0 && "bg-light-white"
-              } `}
+            <div
+              className={`flex items-center space-x-2 hover:bg-gray-900 focus:bg-gray-900 active:bg-gray-900 py-4 pl-5`}
             >
-              <img
-                src={`./src/assets/${Menu.src}.png`}
-                className="w-5 h-5 object-cover"
+              <FaHome className="sidetext-color " size={20} />
+              <h4 className="sidetext-color font-raleway font-medium  text-sm pr-6">
+                project overview
+              </h4>
+              <div className="h-6 border-x-[1px] border-gray-800 " />
+            </div>
+
+            <div className={`flex items-center group mr-5`}>
+              <AiOutlineSetting size={20} className="text-white" />
+              <BiRightArrow
+                className="text-white hidden group-hover:block invert-0 transition ease-in duration-300"
+                size={10}
               />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
-              </span>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </div>
+          {/* project overview section  */}
+
+          <div className="w-full h-px border-[0.001px] border-gray-900" />
+
+          <ul className={` ${!open ? "pl-2 pt-1" : "p-5 pt-4"}`}>
+            {Menus.map((Menu, index) => (
+              <li
+                key={index}
+                className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+              ${Menu.gap ? "mt-3" : "mt-2"} ${
+                  index === 0 && "bg-light-white"
+                } `}
+              >
+                <img
+                  src={`./src/assets/${Menu.src}.png`}
+                  className="w-5 h-5 object-cover"
+                />
+                <span
+                  className={`${!open && "hidden"} origin-left duration-200`}
+                >
+                  {Menu.title}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/*  */}
       </div>
+
       {/* tablet sidebar  */}
       <div className="block desktop:hidden target:block  Xdesktop:hidden">
         <TabletSidebar />
@@ -125,7 +133,7 @@ const App = () => {
             }  */}
           </div>
           <div
-            className={` flex flex-start flex-col  transition duration-100 pt-5 phone:px-4 desktop:px-40 Xdesktop:px-40 tablet:px-10`}
+            className={` flex flex-start flex-col  transition duration-100 pt-5 phone:px-4 desktop:px-20 Xdesktop:px-20 tablet:px-10`}
           >
             <div className="flex flex-row items-center gap-4">
               <h1 className="font-raleway font-semibold text-3xl header-text">
