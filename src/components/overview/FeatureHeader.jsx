@@ -1,8 +1,20 @@
 import React from "react";
 import { useGlobalContext } from "../../services/OnGlobalContext";
+import styles from "../../styles/firebaseCustomStyles";
 
 const FeatureHeader = () => {
-  const { AiOutlinePlus } = useGlobalContext();
+  const {
+    AiOutlinePlus,
+    AiOutlineArrowRight,
+    IoIosAppstore,
+    AiOutlineCodeSandbox,
+    RiFlutterFill,
+    ImCancelCircle,
+    FaRobot,
+    BiCodeAlt,
+    setToogleState,
+    toogleState,
+  } = useGlobalContext();
   return (
     <>
       <div
@@ -16,14 +28,53 @@ const FeatureHeader = () => {
             spark plan
           </span>
         </div>
-        <div className="flex flex-1 flex-row items-center mt-3 gap-4">
+        {/* second flex for options application click */}
+        <div
+          className={` ${
+            toogleState ? "flex" : "hidden"
+          }  flex-1 flex-row items-center mt-3 space-x-2`}
+        >
+          <div
+            className="p-2 flex items-center justify-center rounded-full bg-blue-800 text-white"
+            onClick={() => setToogleState((prev) => !prev)}
+          >
+            <ImCancelCircle size={20} />
+          </div>
+          <div className={`${styles.iconBox} `}>
+            <IoIosAppstore size={20} />
+          </div>
+          <div className={`${styles.iconBox}`}>
+            <FaRobot size={20} />
+          </div>
+          <div className={`${styles.iconBox}`}>
+            <BiCodeAlt size={20} />
+          </div>
+          <div className={`${styles.iconBox2}`}>
+            <AiOutlineCodeSandbox size={20} />
+          </div>
+          <div className={`${styles.iconBox2}`}>
+            <RiFlutterFill size={20} />
+          </div>
+          <div>
+            <h5>select a platform</h5>
+          </div>
+        </div>
+        {/* second flex index for app click */}
+        <div
+          className={` ${
+            !toogleState ? "flex" : "hidden"
+          }  flex-1 flex-row items-center mt-3 gap-4`}
+        >
           <span className="flex w-36 h-5 py-4 pr-2 rounded-2xl items-center gap-1  text-white font-raleway font-semibold text-sm bg-blue-700 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900">
             <div className="flex justify-center items-center bg-purple-600  rounded-full p-1.5 ">
               <AiOutlinePlus className="text-white text-lg font-bold" />
             </div>
             linkedIn rebuilt
           </span>
-          <span className="flex w-28 h-5 py-4 rounded-2xl items-center text-white font-robotoCondensed font-normal text-sm bg-blue-700 capitalize px-4 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900">
+          <span
+            className="flex w-28 h-5 py-4 rounded-2xl items-center text-white font-robotoCondensed font-normal text-sm bg-blue-700 capitalize px-4 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900"
+            onClick={() => setToogleState((prev) => !prev)}
+          >
             <div className="">
               <AiOutlinePlus className="text-white text-xl font-black " />
             </div>
