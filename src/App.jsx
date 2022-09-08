@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { FireWeb, Overview } from "./views";
+import { FireWeb, Login, Overview, ProjectSettings, Register } from "./views";
 
 const App = () => {
   return (
@@ -8,6 +8,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Overview />} />
         <Route path="/web" element={<FireWeb />} />
+        <Route path="/settings/general" element={<ProjectSettings />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
