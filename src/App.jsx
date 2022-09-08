@@ -42,7 +42,7 @@ const App = () => {
     setReleaseDropdown,
   } = useGlobalContext();
   const [open, setOpen] = useState(true);
-  console.log(toogleSidebar);
+  // console.log(toogleSidebar);
   const Menus = [
     { title: "Dashboard", src: "Chart_fill" },
     { title: "Inbox", src: "Chat" },

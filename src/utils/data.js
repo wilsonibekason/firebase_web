@@ -48,27 +48,12 @@ export const sidebarDropdown = [
     icon: "",
   },
 ];
-/**
- * npm install -g gltf-pipeline >npx gltfjsx earth.gltf
- *  <ul className={` ${!open ? "pl-2 pt-1" : "p-5 pt-4"}`}>
-            {Menus.map((Menu, index) => (
-              <li
-                key={index}
-                className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-3" : "mt-2"} ${
-                  index === 0 && "bg-light-white"
-                } `}
-              >
-                <img
-                  src={`./src/assets/${Menu.src}.png`}
-                  className="w-5 h-5 object-cover"
-                />
-                <span
-                  className={`${!open && "hidden"} origin-left duration-200`}
-                >
-                  {Menu.title}
-                </span>
-              </li>
-            ))}
-          </ul>
- */
+
+export const recentProjects = [
+  "linked-clone",
+  "whatsapp-clone",
+  "twitter-clone",
+  "amazon-clone",
+  "facebook-clone",
+  "pinterest-clone",
+];

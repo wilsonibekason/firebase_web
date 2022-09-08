@@ -14,7 +14,10 @@ const Navbar = () => {
     groupedItemTemplate,
     selectedProjectTemplate,
     setVisibleSidebar,
+    AiOutlineArrowDown,
     visibleNav,
+    onModalClick,
+    setModalClick,
   } = useGlobalContext();
   return (
     <>
@@ -24,17 +27,15 @@ const Navbar = () => {
         } sticky`}
       >
         {/* left column */}
-        <div className="flex flex-row flex-1 items-center pl-1 md:pl-2 lg:pl-4">
+        <div className="flex flex-row flex-1 items-center pl-1 md:pl-2 lg:pl-4 desktop:space-x-0 tablet:space-x-2 phone:space-x-0">
           <div className="flex lg:hidden">
             <GiHamburgerMenu
               className="text-lg md:text-2xl mr-0.5 md:mr-1 lg:mr-2"
               onClick={() => setVisibleSidebar((prev) => !prev)}
             />
           </div>
-          <div className="font-raleway font-semibold text-sm  capitalize text-gray-300 block desktop:hidden target:block  Xdesktop:hidden">
-            overview
-          </div>
-          <div className="pr-0 md:pr-20 lg:scroll-pr-20 rounded-tl-xl">
+
+          {/* <div className="pr-0 md:pr-20 lg:scroll-pr-20 rounded-tl-xl">
             <Dropdown
               value={selectedProject}
               options={projects}
@@ -49,6 +50,21 @@ const Navbar = () => {
               placeholder="Select a project"
               className="text-sm pr-20 font-robotoCondensed space-x-1 font-semibold capitalise"
             />
+          </div> */}
+          <div
+            className="flex items-center space-x-1"
+            onClick={() => setModalClick((prev) => !prev)}
+          >
+            <h6 className="font-raleway font-normal text-sm text-gray-200 ">
+              linkedIn-app
+            </h6>
+            <AiOutlineArrowDown
+              size={15}
+              className="text-white font-semibold"
+            />
+          </div>
+          <div className="font-raleway font-semibold text-sm  capitalize text-gray-300 block desktop:hidden target:block  Xdesktop:hidden">
+            overview
           </div>
         </div>
         {/* right column */}

@@ -28,14 +28,31 @@ import { FaIndustry } from "react-icons/fa";
 import { RiFlutterFill } from "react-icons/ri";
 import { ACTIONTYPES } from "./context/actions";
 import { firebaseReducer } from "./context/reducers";
-import GlobalContext from "./context/initialState";
+// import GlobalContext from "./context/initialState";
 import { chat } from "../assets";
 ///
 //const GlobalContext = createContext({});
+const initialState = {
+  visibleCustomToolbar: false,
+  toogleSlide: false,
+  appleHover: false,
+  andriodHover: false,
+  webHover: false,
+  unityHover: false,
+  flutterHover: false,
+};
 
+const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
   // initialise action states
-  const { TOOGLETABLETSIDEBAR } = ACTIONTYPES;
+  const {
+    TOOGLETABLETSIDEBAR,
+    APPLEHOVER,
+    ANDROIDHOVER,
+    WEBHOVER,
+    UNITYHOVER,
+    FLUTTERHOVER,
+  } = ACTIONTYPES;
   const [selectedProject, setSelectedProject] = useState(null);
   const [visibleSidebar, setVisibleSidebar] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -43,8 +60,11 @@ export const GlobalProvider = ({ children }) => {
   const [buildDropdown, setBuildDropdown] = useState(false);
   const [releaseDropdown, setReleaseDropdown] = useState(false);
   const [engageDropdown, setEngageDropdown] = useState(false);
+  const [toogleState, setToogleState] = useState(false);
+  const [onTooltipHover, setOnTooltipHover] = useState(false);
+  const [onModalClick, setModalClick] = useState(false);
   const loadLazyContent = useRef(null);
-  const [firebaseState, dispatch] = useReducer(firebaseReducer, {});
+
   const scrollChange = () => {
     if (window.screenY >= 392) {
       setVisibleNav((prev) => !prev);
@@ -58,12 +78,7 @@ export const GlobalProvider = ({ children }) => {
     "https://icon2.cleanpng.com/20180609/ryh/kisspng-firebase-cloud-messaging-google-cloud-messaging-api-as-a-service-5b1bf782ac0ca2.2103995315285594907047.jpg";
   /// callfunctiom
   window.addEventListener("scroll", scrollChange);
-  const toogleSidebar = () => {
-    dispatch({
-      type: TOOGLETABLETSIDEBAR,
-      payload: !firebaseState.visibleCustomToolbar,
-    });
-  };
+
   const onProjectChange = (e) => setSelectedProject(e.value);
   const projectOptionTemplate = (option) => {
     return (
@@ -122,13 +137,50 @@ export const GlobalProvider = ({ children }) => {
       </div>
     );
   };
-
+  /// defined usereducer funtion to add logic and pass chidren props to other parts of our application
+  const [firebaseState, dispatch] = useReducer(firebaseReducer, initialState);
+  // end of calling the reducer functiion as mentioned above
+  //// reducer functions
+  const toogleSidebar = () => {
+    dispatch({
+      type: TOOGLETABLETSIDEBAR,
+      payload: !firebaseState.visibleCustomToolbar,
+    });
+  };
+  const appleHovered = () => {
+    dispatch({ type: APPLEHOVER, payload: false });
+  };
+  const androidHovered = () => {
+    dispatch({ type: ANDROIDHOVER, payload: true });
+  };
+  const webHovered = () => {
+    dispatch({ type: WEBHOVER, payload: true });
+  };
+  const unityHovered = () => {
+    dispatch({ type: UNITYHOVER, payload: true });
+  };
+  const flutterHovered = () => {
+    dispatch({ type: FLUTTERHOVER, payload: true });
+  };
   return (
     <GlobalContext.Provider
       value={{
         GiHamburgerMenu,
         ImBell,
+        toogleSlide: firebaseState.toogleSlide,
         toogleSidebar: toogleSidebar,
+        // hover sllides
+        andriodHover: firebaseState.andriodHover,
+        androidHovered,
+        webHover: firebaseState.webHover,
+        webHovered,
+        unityHover: firebaseState.unityHover,
+        unityHovered,
+        flutterHover: firebaseState.flutterHover,
+        flutterHovered,
+        appleHovered,
+        appleHover: firebaseState.appleHover,
+        ///////
         projectOptionTemplate: projectOptionTemplate,
         groupedItemTemplate: groupedItemTemplate,
         onProjectChange,
@@ -168,6 +220,13 @@ export const GlobalProvider = ({ children }) => {
         ImCancelCircle,
         FaRobot,
         BiCodeAlt,
+        ////states
+        setToogleState,
+        toogleState,
+        onTooltipHover,
+        setOnTooltipHover,
+        onModalClick,
+        setModalClick,
       }}
     >
       {children}
