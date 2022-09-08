@@ -381,3 +381,8 @@ background-color: var(--fire-color-featurebar-bg);
 .div:hover{
   background-color: #1a73e8;
 }
+
+.iconic-color{
+  background-color: var(--fire-color-canvas-heading);
+}
+
