@@ -1,4 +1,6 @@
 export { default as Navbar } from "./Navbar";
+export { default as DesktopSidebar } from "./DesktopSidebar";
+export { default as Layout } from "./projectsetting/Layout";
 /**
  * ton-base) {
     color: var(--fire-color-link);

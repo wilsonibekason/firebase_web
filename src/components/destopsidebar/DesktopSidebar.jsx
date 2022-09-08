@@ -1,6 +1,7 @@
 import React from "react";
+import { Sidebar } from "primereact/sidebar";
 import { AiOutlinePlus } from "react-icons/ai";
-import {} from "react-icons/io";
+
 import { Navbar } from "./../components";
 import { useGlobalContext } from "./../services/OnGlobalContext";
 import TabletSidebar from "./../components/TabletSidebar";
@@ -11,11 +12,8 @@ import {
   FeatureHeader,
   FirebaseCard,
 } from "./../components/overview";
-import { firebaseLogo } from "./../../assets";
+import { firebaseLogo } from "./../assets";
 import styles from "../styles/firebaseCustomStyles";
-import SettingModal from "./../components/overview/SettingModal";
-
-const [open, setOpen] = useState(true);
 const DesktopSidebar = () => {
   const {
     GiHamburgerMenu,
