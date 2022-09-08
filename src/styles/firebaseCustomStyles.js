@@ -13,6 +13,7 @@ const styles = {
   flexCol: "relative space-y-2",
   flexCol2: "flex flex-col flex-start space-y-2.5",
   flexCol3: "flex flex-col flex-start space-y-1",
+  flexRow: "flex flex-1 flex-row flex-start",
 };
 
 export default styles;

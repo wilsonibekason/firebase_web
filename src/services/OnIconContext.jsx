@@ -1,5 +1,12 @@
 import { useContext, createContext } from "react";
-import { BsApple } from "react-icons/bs";
+import {
+  BsApple,
+  BsSquareFill,
+  BsFillArrowUpRightSquareFill,
+} from "react-icons/bs";
+import { MdOutlineCancel } from "react-icons/md";
+import { BiSquare } from "react-icons/bi";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 const IconsContext = createContext({});
 
 export const IconProvider = ({ children }) => {
@@ -7,6 +14,11 @@ export const IconProvider = ({ children }) => {
     <IconsContext.Provider
       value={{
         BsApple,
+        MdOutlineCancel,
+        BsSquareFill,
+        BiSquare,
+        AiOutlineQuestionCircle,
+        BsFillArrowUpRightSquareFill,
       }}
     >
       {children}

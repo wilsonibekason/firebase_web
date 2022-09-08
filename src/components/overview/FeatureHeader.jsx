@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../services/OnGlobalContext";
 import styles from "../../styles/firebaseCustomStyles";
 import ProjectModalView from "./ProjectModalView";
@@ -36,7 +37,7 @@ const FeatureHeader = () => {
     setModalClick,
     onSettingModal,
   } = useGlobalContext();
-
+  const navigate = useNavigate();
   return (
     <>
       {onModalClick && <ProjectModalView />}
@@ -64,7 +65,10 @@ const FeatureHeader = () => {
           >
             <ImCancelCircle size={20} />
           </div>
-          <div className={`${styles.flexCol}`}>
+          <div
+            className={`${styles.flexCol}`}
+            onClick={() => navigate("/web", { replace: true })}
+          >
             <div className={`${styles.iconBox} `} onClick={() => appleHovered}>
               <IoIosAppstore size={20} />
             </div>
