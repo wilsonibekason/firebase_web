@@ -7,10 +7,10 @@ import React, {
 } from "react";
 ///
 import { GiHamburgerMenu, GiWorld } from "react-icons/gi";
-import { ImBell } from "react-icons/im";
-import { FaHome, FaCubes } from "react-icons/fa";
+import { ImBell, ImCancelCircle } from "react-icons/im";
+import { FaHome, FaCubes, FaRobot } from "react-icons/fa";
 import { FcSettings } from "react-icons/fc";
-import { BiRightArrow } from "react-icons/bi";
+import { BiRightArrow, BiCodeAlt } from "react-icons/bi";
 import {
   AiOutlineSetting,
   AiOutlineEye,
@@ -19,9 +19,13 @@ import {
   AiOutlineArrowDown,
   AiOutlineArrowUp,
   AiOutlineArrowRight,
+  AiOutlineCodeSandbox,
+  AiOutlinePlus,
 } from "react-icons/ai";
+import { IoIosAppstore } from "react-icons/io";
 import { MdPeopleOutline } from "react-icons/md";
 import { FaIndustry } from "react-icons/fa";
+import { RiFlutterFill } from "react-icons/ri";
 import { ACTIONTYPES } from "./context/actions";
 import { firebaseReducer } from "./context/reducers";
 import GlobalContext from "./context/initialState";
@@ -145,6 +149,7 @@ export const GlobalProvider = ({ children }) => {
         FaCubes,
         AiOutlineArrowLeft,
         AiOutlineArrowDown,
+        AiOutlinePlus,
         GiWorld,
         AiOutlineArrowUp,
         setDropdown,
@@ -157,6 +162,12 @@ export const GlobalProvider = ({ children }) => {
         engageDropdown,
         setEngageDropdown,
         AiOutlineArrowRight,
+        IoIosAppstore,
+        AiOutlineCodeSandbox,
+        RiFlutterFill,
+        ImCancelCircle,
+        FaRobot,
+        BiCodeAlt,
       }}
     >
       {children}

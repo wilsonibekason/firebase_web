@@ -9,13 +9,16 @@ import "primeicons/primeicons.css";
 // import ScrollToTop from "./hooks/scrollToTop";
 import "./index.css";
 import { GlobalProvider } from "./services/OnGlobalContext";
+import { IconProvider } from "./services/OnIconContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalProvider>
-      {/* <ScrollToTop> */}
-      <App />
-      {/* </ScrollToTop> */}
+      <IconProvider>
+        {/* <ScrollToTop> */}
+        <App />
+        {/* </ScrollToTop> */}
+      </IconProvider>
     </GlobalProvider>
   </React.StrictMode>
 );

@@ -6,7 +6,12 @@ import { Navbar } from "./components";
 import { useGlobalContext } from "./services/OnGlobalContext";
 import TabletSidebar from "./components/TabletSidebar";
 import "./App.css";
-import { DropdownContainer, FirebaseCard } from "./components/overview";
+import {
+  DropdownContainer,
+  FeatureAnalysis,
+  FeatureHeader,
+  FirebaseCard,
+} from "./components/overview";
 import { firebaseLogo } from "./assets";
 import styles from "./styles/firebaseCustomStyles";
 const App = () => {
@@ -448,7 +453,7 @@ const App = () => {
               open ? "desktop:left-96" : "desktop:left-40"desktop:absolute
             }  */}
           </div>
-          <div
+          {/* <div
             className={` flex flex-start flex-col  transition duration-100 pt-5 phone:px-4 desktop:px-20 Xdesktop:px-20 tablet:px-10`}
           >
             <div className="flex flex-row items-center gap-4">
@@ -473,18 +478,16 @@ const App = () => {
                 Add app
               </span>
             </div>
-          </div>
+          </div> */}
+          <FeatureHeader />
           <img
             src="	https://www.gstatic.com/mobilesdk/190805_mobilesdk/illustration-b-waiting@2x.png"
             alt=""
             className="bg-no-repeat bg-bottom bg-cover mt-0  w-[2000px] h-full"
           />
         </div>
-        <div className="py-5 bg-gray-200 items-center h-10 flex justify-center">
-          <h1 className="text-sm font-robotoCondensed font-normal text-gray-800">
-            waiting for Analytics data ...
-          </h1>
-        </div>
+        {/* analysis */}
+        <FeatureAnalysis />
         <div className="min-h-[300vh]  phone:px-4 tablet:px-4 desktop:px-40 Xdesktop:px-40 ">
           <FirebaseCard />
         </div>
