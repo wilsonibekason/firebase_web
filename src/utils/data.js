@@ -66,3 +66,48 @@ export const recentProjects = [
   "facebook-clone",
   "pinterest-clone",
 ];
+
+export const tabElements = [
+  {
+    name: "general",
+    id: 1,
+    link: "/settings/general/general",
+    customStyles: "",
+  },
+  {
+    name: "cloud messaging",
+    id: 2,
+    link: "/settings/general/cloudmessaging",
+    customStyles: "",
+  },
+  {
+    name: "integration",
+    id: 3,
+    link: "/settings/general/integration",
+    customStyles: "",
+  },
+  {
+    name: "service account",
+    id: 4,
+    link: "/settings/general/serviceaccount",
+    customStyles: "",
+  },
+  {
+    name: "data privacy",
+    id: 5,
+    link: "/settings/general/dataprivacy",
+    customStyles: "",
+  },
+  {
+    name: "user permission",
+    id: 6,
+    link: "/settings/general/userpermission",
+    customStyles: "",
+  },
+  {
+    name: "app check",
+    id: 7,
+    link: "/settings/general/appcheck",
+    customStyles: "",
+  },
+];

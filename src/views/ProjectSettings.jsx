@@ -1,10 +1,12 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { Layout } from "../components";
 import {
   AppCheck,
   CloudMessaging,
   DataPrivacy,
   General,
+  Integration,
   ServiceAccount,
   UsersPermission,
 } from "../components/destopsidebar/settingComponents";

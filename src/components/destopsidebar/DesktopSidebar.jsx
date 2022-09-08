@@ -43,6 +43,8 @@ const DesktopSidebar = () => {
     setOnSettingModal,
     onSettingModal,
   } = useGlobalContext();
+  const arrow = <AiOutlineArrowDown />;
+
   return (
     <div
       className={` ${
@@ -187,7 +189,9 @@ const DesktopSidebar = () => {
                 Analytics
               </h4>
             </div>
-            <div>{!dropdown ? arrow : <AiOutlineArrowUp />}</div>
+            <div>
+              {!dropdown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
+            </div>
           </div>
           {/* hidden containrer contents */}
           <div

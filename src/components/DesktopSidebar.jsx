@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import {} from "react-icons/io";
 import { Navbar } from "./../components";
@@ -11,12 +11,12 @@ import {
   FeatureHeader,
   FirebaseCard,
 } from "./../components/overview";
-import { firebaseLogo } from "./../../assets";
+import { control, firebaseLogo } from "./../assets";
 import styles from "../styles/firebaseCustomStyles";
 import SettingModal from "./../components/overview/SettingModal";
 
-const [open, setOpen] = useState(true);
 const DesktopSidebar = () => {
+  const [open, setOpen] = useState(true);
   const {
     GiHamburgerMenu,
     setVisibleSidebar,
@@ -52,7 +52,7 @@ const DesktopSidebar = () => {
       } hidden md:hidden lg:block bg-[#00001a] h-auto transition-all ease-linear   pt-1 relative  `}
     >
       <img
-        src="./src/assets/control.png"
+        src={control}
         className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
      border-2 rounded-full  ${!open && "rotate-180"}`}
         onClick={() => setOpen(!open)}
@@ -189,7 +189,9 @@ const DesktopSidebar = () => {
                 Analytics
               </h4>
             </div>
-            <div>{!dropdown ? arrow : <AiOutlineArrowUp />}</div>
+            <div>
+              {!dropdown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
+            </div>
           </div>
           {/* hidden containrer contents */}
           <div

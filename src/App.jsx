@@ -8,7 +8,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Overview />} />
         <Route path="/web" element={<FireWeb />} />
-        <Route path="/settings/general" element={<ProjectSettings />} />
+        <Route path="/settings/general*" element={<ProjectSettings />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

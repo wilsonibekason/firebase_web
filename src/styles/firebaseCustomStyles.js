@@ -10,6 +10,8 @@ const styles = {
     "p-1.5 flex items-center justify-center bg-white rounded-full text-blue-700 hover:bg-gray-400",
   iconBox2:
     "p-1.5 flex items-center justify-center bg-blue-600 border-2 border-solid border-gray-200  rounded-full text-gray-300 hover:bg-blue-900",
+  header:
+    "font-raleway font-semibold phone:text-md tablet:text-lg laptop:text-2xl desktop:text-3xl Xdesktop:text-3xl text-gray-700",
   flexCol: "relative space-y-2",
   flexCol2: "flex flex-col flex-start space-y-2.5",
   flexCol3: "flex flex-col flex-start space-y-1",
