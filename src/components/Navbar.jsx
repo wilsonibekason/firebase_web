@@ -53,11 +53,15 @@ const Navbar = () => {
         </div>
         {/* right column */}
         <div className="flex flex-row gap-2 md:gap-3 lg:gap-4 items-center">
+          <h4 className="font-raleway font-semibold text-sm text-white phone:hidden tablet:hidden laptop:block desktop:block Xdesktop:block">
+            go to docs
+          </h4>
+
           <div className="relative">
             <ImBell className="font-bold text-2xl " />
             <div className="absolute inset-y-0 right-2 flex items-center pl-1.5 bg-red-500 w-2 h-2 rounded-full"></div>
           </div>
-          <div>
+          <div className="phone:block tablet:block laptop:hidden desktop:hidden Xdesktop:hidden">
             <BsThreeDotsVertical className="text-2xl" />
           </div>
           <div>
