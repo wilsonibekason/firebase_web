@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useIconContext } from "../services/OnIconContext";
 import styles from "../styles/firebaseCustomStyles";
 const FireWeb = () => {
@@ -9,19 +10,28 @@ const FireWeb = () => {
     AiOutlineQuestionCircle,
     BsFillArrowUpRightSquareFill,
   } = useIconContext();
+  const navigate = useNavigate();
   const { flexCol, flexCol2, flexCol3, flexRow } = styles;
   return (
     <>
-      <div className="flex max-w-full min-h-screen bg-gray-200 py-20 px-40">
+      <div className="flex max-w-full min-h-screen bg-gray-200 tablet:py-10 desktop:py-20 Xdesktop:py-20 tablet:px-0 desktop:px-40 Xdesktop:px-40">
         <div>
-          <div className={`${styles.flexRow} items-center space-x-8`}>
-            <div>
-              <MdOutlineCancel size={30} />
+          <div
+            className={`flex tablet:flex-row-reverse  desktop:flex-row Xdesktop:flex-row  justify-center tablet:justify-end  space-x-8`}
+          >
+            <div
+              className="tablet:justify-end"
+              onClick={() => navigate("/", { replace: true })}
+            >
+              <MdOutlineCancel
+                size={30}
+                className="text-gray-500 hover:text-gray-800 transition ease-in-out duration-200"
+              />
             </div>
             <div className={`${styles.flexCol} space-y-10`}>
               <div>
                 <h4
-                  className={`font-raleway font-semibold text-3xl text-gray-700 `}
+                  className={`font-raleway font-semibold phone:text-md tablet:text-lg laptop:text-2xl desktop:text-3xl Xdesktop:text-3xl text-gray-700 `}
                 >
                   Add firebase to your web app
                 </h4>
@@ -53,7 +63,7 @@ const FireWeb = () => {
                       name=""
                       id=""
                       placeholder="My web app"
-                      className="border border-solid border-gray-500 outline-none bg-white w-[26rem] py-1.5 px-2 rounded placeholder:text-ellipsis placeholder:font-light placeholder:font-raleway"
+                      className="border border-solid border-gray-500 outline-none bg-white w-[26rem] py-1.5 px-2 rounded  placeholder:font-light placeholder:font-raleway placeholder:text-gray-500 focus:border-blue-400 focus:border-2 text-gray-800 font-raleway font-normal"
                     />
                   </div>
                   <div
@@ -78,10 +88,7 @@ const FireWeb = () => {
                     <div
                       className={`${flexRow} items-center space-x-1 font-robotoCondensed font-normal text-sm text-gray-900 `}
                     >
-                      <a
-                        href=""
-                        className="text-blue-500 border-b border-blue-500"
-                      >
+                      <a href="" className="text-blue-500 underline">
                         Learn more
                       </a>
                       <BsFillArrowUpRightSquareFill className="text-blue-500" />
@@ -98,7 +105,7 @@ const FireWeb = () => {
                   <div className="mt-10">
                     <button
                       aria-disabled
-                      className={`py-2 px-3 bg-gray-400 rounded-lg font-raleway font-normal text-sm `}
+                      className={`py-2 px-3 bg-gray-300 rounded-lg font-raleway font-normal text-sm `}
                     >
                       Register app
                     </button>

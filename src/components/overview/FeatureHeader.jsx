@@ -60,15 +60,12 @@ const FeatureHeader = () => {
           }  flex-1 flex-row items-center mt-3 space-x-2  transition-all ease-linear duration-700 delay-500`}
         >
           <div
-            className="p-2 flex items-center justify-center rounded-full bg-blue-800 text-white"
+            className="p-2 flex items-center justify-center rounded-full bg-blue-800 text-white hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900"
             onClick={() => setToogleState((prev) => !prev)}
           >
             <ImCancelCircle size={20} />
           </div>
-          <div
-            className={`${styles.flexCol}`}
-            onClick={() => navigate("/web", { replace: true })}
-          >
+          <div className={`${styles.flexCol}`}>
             <div className={`${styles.iconBox} `} onClick={() => appleHovered}>
               <IoIosAppstore size={20} />
             </div>
@@ -84,7 +81,10 @@ const FeatureHeader = () => {
             </div>
             <Tooltip name={"apple"} customStyles="capitalize" />
           </div>
-          <div className={`${styles.flexCol}`}>
+          <div
+            className={`${styles.flexCol}`}
+            onClick={() => navigate("/web", { replace: true })}
+          >
             <div className={`${styles.iconBox}`}>
               <BiCodeAlt size={20} />
             </div>
