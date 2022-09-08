@@ -14,6 +14,7 @@ import {
 } from "./components/overview";
 import { firebaseLogo } from "./assets";
 import styles from "./styles/firebaseCustomStyles";
+import SettingModal from "./components/overview/SettingModal";
 const App = () => {
   const {
     GiHamburgerMenu,
@@ -40,6 +41,8 @@ const App = () => {
     setBuildDropdown,
     releaseDropdown,
     setReleaseDropdown,
+    setOnSettingModal,
+    onSettingModal,
   } = useGlobalContext();
   const [open, setOpen] = useState(true);
   // console.log(toogleSidebar);
@@ -55,6 +58,7 @@ const App = () => {
   ];
 
   const arrow = <AiOutlineArrowDown />;
+
   // bg-dark-purple
   return (
     <div className="flex ">
@@ -111,8 +115,15 @@ const App = () => {
               <div className="h-6 border-x-[1px] border-gray-800 " />
             </div>
 
-            <div className={`flex items-center group mr-5`}>
-              <AiOutlineSetting size={20} className="text-white" />
+            <div
+              className={`flex items-center group mr-5`}
+              onClick={() => setOnSettingModal((prev) => !prev)}
+            >
+              <AiOutlineSetting
+                size={20}
+                className="text-white"
+                // onClick={() => setOnSettingModal((prev) => !prev)}
+              />
               <BiRightArrow
                 className="text-white hidden group-hover:block invert-0 transition ease-in duration-300"
                 size={10}
