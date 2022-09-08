@@ -1,7 +1,8 @@
 const styles = {
   paragraph: "font-raleway font-medium text-sm  capitalize ",
   paragraph2: "font-raleway font-normal text-xss capitalize text-gray-200",
-  paragraph3: "font-robotoCondensed font-semibold text-xss capitalize",
+  paragraph3:
+    "font-robotoCondensed font-semibold text-xss capitalize p-1.5 hover:bg-gray-400 rounded-lg ",
   ulbg: "hover:bg-gray-900",
   iconBox:
     "p-1.5 flex items-center justify-center bg-white rounded-full text-blue-700 hover:bg-gray-400",

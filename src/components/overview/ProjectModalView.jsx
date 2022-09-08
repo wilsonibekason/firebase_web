@@ -9,7 +9,11 @@ const ProjectModalView = () => {
         <div className="absolute h-[40%] w-[40%] bg-white rounded-l-lg  overflow-visible overflow-y-auto  scrollbar-thumb-gray-400  scrollbar-thumb-rounded ">
           {/* rendering contents  current projects scrollbar-corner-white scrollbar-track-white*/}
           <div className={`${styles.flexCol2} p-4`}>
-            <p className={`${styles.paragraph3} text-blue-800`}>linkedin app</p>
+            <p
+              className={`font-robotoCondensed font-semibold text-xss capitalize} text-blue-800`}
+            >
+              Recent Projects{" "}
+            </p>
             <p className={`${styles.paragraph3} text-gray-800`}>
               see all projects{" "}
             </p>
@@ -20,7 +24,11 @@ const ProjectModalView = () => {
           <div className="border-t border-solid w-full " />
           {/* rendering recent projects  */}
           <div className={`${styles.flexCol2} p-4`}>
-            <p className={`${styles.paragraph3} text-blue-800`}>linkedin app</p>
+            <p
+              className={`font-robotoCondensed font-semibold text-xss capitalize text-blue-800`}
+            >
+              linkedin app
+            </p>
             {recentProjects.map((item, index) => (
               <p className={`${styles.paragraph3} text-gray-800`} key={index}>
                 {item}{" "}
