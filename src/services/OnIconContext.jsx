@@ -4,7 +4,7 @@ import {
   BsSquareFill,
   BsFillArrowUpRightSquareFill,
 } from "react-icons/bs";
-import { MdOutlineCancel } from "react-icons/md";
+import { MdOutlineCancel, MdModeEdit } from "react-icons/md";
 import { BiSquare } from "react-icons/bi";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 const IconsContext = createContext({});
@@ -19,6 +19,7 @@ export const IconProvider = ({ children }) => {
         BiSquare,
         AiOutlineQuestionCircle,
         BsFillArrowUpRightSquareFill,
+        MdModeEdit,
       }}
     >
       {children}
