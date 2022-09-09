@@ -7,6 +7,7 @@ const styles = {
     "font-robotoCondensed font-semibold text-xss capitalize  hover:bg-gray-400 rounded-lg ",
   paragraph5: "font-raleway font-medium text-sm text-gray-600 ",
   paragraph6: "font-raleway font-medium text-xss text-gray-400",
+  paragraph7: "font-raleway font-semibold text-sm text-gray-800",
   ulbg: "hover:bg-gray-900",
   iconBox:
     "p-1.5 flex items-center justify-center bg-white rounded-full text-blue-700 hover:bg-gray-400",
@@ -18,6 +19,7 @@ const styles = {
   iconColor: "text-gray-500",
   /// list element
   listItem: "",
+  borderBottom: "border-b border-solid border-gray-300",
   flexCol: "relative space-y-2",
   flexCol2: "flex flex-col flex-start space-y-2.5",
   flexCol3: "flex flex-col flex-start space-y-1",
