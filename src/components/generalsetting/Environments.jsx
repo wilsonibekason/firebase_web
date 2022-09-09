@@ -16,7 +16,7 @@ const Environments = () => {
 
   return (
     <>
-      <div className={`${flexCol4} w-[60%] max-w-[50%] my-6`}>
+      <div className={`${flexCol4} w-[60%] max-w-[60%] my-6`}>
         <div>
           <p className={`${paragraph7}`}>Environments</p>
         </div>

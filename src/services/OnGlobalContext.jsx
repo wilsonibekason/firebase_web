@@ -64,6 +64,7 @@ export const GlobalProvider = ({ children }) => {
   const [onTooltipHover, setOnTooltipHover] = useState(false);
   const [onModalClick, setModalClick] = useState(false);
   const [onSettingModal, setOnSettingModal] = useState(false);
+  const [open, setOpen] = useState(false);
   const loadLazyContent = useRef(null);
 
   const scrollChange = () => {
@@ -230,6 +231,8 @@ export const GlobalProvider = ({ children }) => {
         setModalClick,
         setOnSettingModal,
         onSettingModal,
+        open,
+        setOpen,
       }}
     >
       {children}

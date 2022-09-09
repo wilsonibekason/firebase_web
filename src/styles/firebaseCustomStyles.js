@@ -8,6 +8,8 @@ const styles = {
   paragraph5: "font-raleway font-medium text-sm text-gray-600 ",
   paragraph6: "font-raleway font-medium text-xss text-gray-400",
   paragraph7: "font-raleway font-semibold text-sm text-gray-800",
+  paragraph8: "font-raleway font-semibold text-xss text-gray-800",
+  hreftext: "font-raleway font-medium text-xss text-blue-500",
   ulbg: "hover:bg-gray-900",
   iconBox:
     "p-1.5 flex items-center justify-center bg-white rounded-full text-blue-700 hover:bg-gray-400",
@@ -27,7 +29,8 @@ const styles = {
   flexRow: "flex flex-row justify-between ",
   flexRow2: "flex flex-row flex-1 ",
   flexRowAround: "flex flex-1 flex-row flex-start justify-around",
-  flexCentered: "flex flex-start items-center justify-center ",
+  flexCentered: "flex flex-start items-center justify-center",
+  flexCentered2: "flex flex-start items-center",
 };
 
 export default styles;

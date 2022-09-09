@@ -16,7 +16,7 @@ const PublicSetting = () => {
     useIconContext();
   return (
     <>
-      <div className={`${flexCol4}  w-[60%] max-w-[50%] mt-6`}>
+      <div className={`${flexCol4}  w-[60%] max-w-[60%] mt-6`}>
         <div>
           <p className={`${paragraph7}`}>Environments</p>
         </div>
@@ -43,9 +43,9 @@ const PublicSetting = () => {
             <AiOutlineQuestionCircle className={`${iconColor}`} size={16} />
           </div>
           <div
-            className={`${flexRow} space-x-16 items-center border border-solid border-gray-400 p-2 rounded focus:border-blue-400`}
+            className={`${flexRow} space-x-20 items-center border border-solid border-gray-400 p-2 rounded focus:border-blue-400`}
           >
-            <p className={`${paragraph5} `}>Public_facing name</p>
+            <p className={`${paragraph5} `}>wilsonibekason@gmail.com</p>
             <AiOutlineCaretDown className={`${iconColor}`} size={14} />
           </div>
         </div>

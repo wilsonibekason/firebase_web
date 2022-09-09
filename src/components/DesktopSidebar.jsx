@@ -16,7 +16,7 @@ import styles from "../styles/firebaseCustomStyles";
 import SettingModal from "./../components/overview/SettingModal";
 
 const DesktopSidebar = () => {
-  const [open, setOpen] = useState(true);
+  // const [open, setOpen] = useState(true);
   const {
     GiHamburgerMenu,
     setVisibleSidebar,
@@ -44,6 +44,8 @@ const DesktopSidebar = () => {
     setReleaseDropdown,
     setOnSettingModal,
     onSettingModal,
+    setOpen,
+    open
   } = useGlobalContext();
   return (
     <div

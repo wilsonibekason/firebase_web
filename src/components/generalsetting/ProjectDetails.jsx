@@ -15,7 +15,7 @@ const ProjectDetails = () => {
   const { AiOutlineQuestionCircle, MdModeEdit } = useIconContext();
   return (
     <>
-      <div className={`${flexCol4} w-[60%] max-w-[50%] mb-6`}>
+      <div className={`${flexCol4} w-[60%] max-w-[60%] mb-6`}>
         <div className={`${flexRow}`}>
           <div className={`${paragraph6}`}>Project name</div>
           <div className={`${flexCentered} space-x-1`}>

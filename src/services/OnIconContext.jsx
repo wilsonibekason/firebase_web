@@ -3,9 +3,12 @@ import {
   BsApple,
   BsSquareFill,
   BsFillArrowUpRightSquareFill,
+  BsBoxArrowUpRight,
+  BsThreeDotsVertical,
 } from "react-icons/bs";
 import { MdOutlineCancel, MdModeEdit } from "react-icons/md";
 import { BiSquare } from "react-icons/bi";
+import { FiCheckSquare } from "react-icons/fi";
 import { AiOutlineQuestionCircle, AiOutlineCaretDown } from "react-icons/ai";
 const IconsContext = createContext({});
 
@@ -21,6 +24,9 @@ export const IconProvider = ({ children }) => {
         BsFillArrowUpRightSquareFill,
         MdModeEdit,
         AiOutlineCaretDown,
+        FiCheckSquare,
+        BsBoxArrowUpRight,
+        BsThreeDotsVertical,
       }}
     >
       {children}

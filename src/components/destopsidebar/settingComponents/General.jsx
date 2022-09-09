@@ -16,7 +16,7 @@ const General = () => {
           <h4 className={`${paragraph7}`}>your project</h4>
         </div>
         <div className="w-[100%] min-h-[80vh] bg-white shadow-md  rounded-lg">
-          <div className="flex flex-col flex-start flex-start my-10">
+          <div className="flex flex-col my-10">
             {/* projectsetting */}
             <div className="mx-7 ">
               <ProjectDetails />
