@@ -9,6 +9,9 @@ import {
 import { MdOutlineCancel, MdModeEdit } from "react-icons/md";
 import { BiSquare } from "react-icons/bi";
 import { FiCheckSquare } from "react-icons/fi";
+import { FaGoogleDrive } from "react-icons/fa";
+import { GrCheckmark } from "react-icons/gr";
+import { IoMdArrowForward } from "react-icons/io";
 import { AiOutlineQuestionCircle, AiOutlineCaretDown } from "react-icons/ai";
 const IconsContext = createContext({});
 
@@ -27,6 +30,9 @@ export const IconProvider = ({ children }) => {
         FiCheckSquare,
         BsBoxArrowUpRight,
         BsThreeDotsVertical,
+        FaGoogleDrive,
+        GrCheckmark,
+        IoMdArrowForward,
       }}
     >
       {children}

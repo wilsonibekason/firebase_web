@@ -45,7 +45,7 @@ const DesktopSidebar = () => {
     setOnSettingModal,
     onSettingModal,
     setOpen,
-    open
+    open,
   } = useGlobalContext();
   return (
     <div

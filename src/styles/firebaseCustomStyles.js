@@ -9,6 +9,7 @@ const styles = {
   paragraph6: "font-raleway font-medium text-xss text-gray-400",
   paragraph7: "font-raleway font-semibold text-sm text-gray-800",
   paragraph8: "font-raleway font-semibold text-xss text-gray-800",
+  paragraph9: "font-raleway font-medium text-sm text-blue-600 ",
   hreftext: "font-raleway font-medium text-xss text-blue-500",
   ulbg: "hover:bg-gray-900",
   iconBox:
@@ -31,6 +32,8 @@ const styles = {
   flexRowAround: "flex flex-1 flex-row flex-start justify-around",
   flexCentered: "flex flex-start items-center justify-center",
   flexCentered2: "flex flex-start items-center",
+  transitions: "transition duration-500 ease-in-out",
 };
 
+export const Layout = {};
 export default styles;

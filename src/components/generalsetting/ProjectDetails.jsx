@@ -24,7 +24,7 @@ const ProjectDetails = () => {
           </div>
         </div>
         <div className={`${flexRow}`}>
-          <div className={`${flexCentered} space-x-2`}>
+          <div className={`${flexCentered} space-x-2 `}>
             <p className={`${paragraph6}`}>Project id</p>
             <AiOutlineQuestionCircle className={`${iconColor}`} size={16} />
           </div>

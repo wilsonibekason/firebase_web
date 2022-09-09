@@ -373,7 +373,7 @@ background-color: var(--fire-color-featurebar-bg);
 }
 
 .sidetext-color{
-  color: #03a9f4;
+  color: #58bbe9;
 }
 .invert{
   filter: invert(1);
@@ -384,5 +384,6 @@ background-color: var(--fire-color-featurebar-bg);
 
 .iconic-color{
   background-color: var(--fire-color-canvas-heading);
+
 }
 
