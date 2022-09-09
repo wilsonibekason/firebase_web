@@ -32,8 +32,15 @@ const styles = {
   flexRowAround: "flex flex-1 flex-row flex-start justify-around",
   flexCentered: "flex flex-start items-center justify-center",
   flexCentered2: "flex flex-start items-center",
+  flexEnd: "flex justify-end items-center",
   transitions: "transition duration-500 ease-in-out",
 };
 
-export const Layout = {};
+export const Layout = {
+  gridSection:
+    "grid phone:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-4 Xdesktop:grid-cols-4 gap-2 Xdesktop:gap-4",
+  gridSectionLayout: "grid grid-cols-12 gap-0",
+  gridSectionChild: "col-span-4 min-h-[90vh]",
+  gridSectionChild2: "col-span-8 max-h-[90vh]",
+};
 export default styles;

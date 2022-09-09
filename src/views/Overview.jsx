@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Sidebar } from "primereact/sidebar";
 import { AiOutlinePlus } from "react-icons/ai";
 import {} from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "./../components";
 import { useGlobalContext } from "./../services/OnGlobalContext";
 import TabletSidebar from "./../components/TabletSidebar";
@@ -16,6 +17,7 @@ import { firebaseLogo } from "./../assets";
 import styles from "../styles/firebaseCustomStyles";
 import SettingModal from "./../components/overview/SettingModal";
 const Overview = () => {
+  const navigate = useNavigate();
   const {
     GiHamburgerMenu,
     setVisibleSidebar,
@@ -64,6 +66,7 @@ const Overview = () => {
           <div className="flex gap-x-4 items-center px-5 py-2">
             <img
               // src="./src/assets/logo.png"
+              onClick={() => navigate("/", { replace: true })}
               src={firebaseLogo}
               className={`cursor-pointer duration-500 w-7 h-7 ${
                 open && "rotate-[360deg]"
@@ -372,11 +375,25 @@ const Overview = () => {
               >
                 <FaHome size={20} />
               </li>
-              <li
+              {/* <li
                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center ${styles.ulbg} `}
               >
                 <AiOutlineSetting size={20} />
-              </li>
+              </li> */}
+              <div
+                className={`flex items-center group    rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm  `}
+                onClick={() => setOnSettingModal((prev) => !prev)}
+              >
+                <AiOutlineSetting
+                  size={20}
+                  className="text-white"
+                  // onClick={() => setOnSettingModal((prev) => !prev)}
+                />
+                <BiRightArrow
+                  className="text-white hidden group-hover:block invert-0 transition ease-in duration-300"
+                  size={10}
+                />
+              </div>
               <div className="w-full  border-[0.0003px] border-gray-500" />
 
               <li

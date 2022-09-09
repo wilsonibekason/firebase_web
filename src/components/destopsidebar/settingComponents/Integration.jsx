@@ -18,8 +18,10 @@ const Integration = () => {
       <div className={`my-20  max-w-full `}>
         <div
           className={` ${
-            open ? " mx-10" : "  mx-40"
-          } grid phone:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-4 Xdesktop:grid-cols-4 gap-2`}
+            open
+              ? " mx-10"
+              : "  desktop:mx-40 Xdesktop:mx-40 tablet:mx-16 laptop:mx-16 phone:mx-auto"
+          } grid phone:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-4 Xdesktop:grid-cols-4 gap-2 Xdesktop:gap-4`}
         >
           <div
             className={`  w-[14rem] h-[15rem] bg-white rounded-lg shadow-lg`}
