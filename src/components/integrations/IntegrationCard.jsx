@@ -9,7 +9,7 @@ const Integration = () => {
     <>
       <div className={`${flexCol2} p-4 `}>
         <div className={`${flexRow2} items-center space-x-2`}>
-          <FaGoogleDrive className="text-gray-600 " size={25} />
+          <FaGoogleDrive className="text-yellow-600 " size={25} />
           <p
             className={`font-robotoCondensed font-semibold text-[15px] leading-normal text-gray-600  capitalize `}
           >

@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../../../services/OnGlobalContext";
 import { useIconContext } from "../../../services/OnIconContext";
 import styles from "../../../styles/firebaseCustomStyles";
-import { IntegrationCard } from "../../integrations";
+import { IntegrationCard, IntegrationCard2 } from "../../integrations";
 
 const Integration = () => {
   const {} = styles;
@@ -22,7 +22,7 @@ const Integration = () => {
             <IntegrationCard />
           </div>
           <div className={`w-[14rem] h-[15rem] bg-white rounded-lg shadow-lg`}>
-            <IntegrationCard />
+            <IntegrationCard2 />
           </div>
           <div className={`w-[14rem] h-[15rem] bg-white rounded-lg shadow-lg`}>
             <IntegrationCard />
