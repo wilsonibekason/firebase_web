@@ -13,7 +13,7 @@ import { FaGoogleDrive } from "react-icons/fa";
 import { GrCheckmark } from "react-icons/gr";
 import { IoMdArrowForward } from "react-icons/io";
 import { AiOutlineQuestionCircle, AiOutlineCaretDown } from "react-icons/ai";
-import { SiGooglechrome } from "react-icons/si";
+import { SiGooglechrome, SiGoogleassistant, SiSlack } from "react-icons/si";
 const IconsContext = createContext({});
 
 export const IconProvider = ({ children }) => {
@@ -35,6 +35,8 @@ export const IconProvider = ({ children }) => {
         GrCheckmark,
         IoMdArrowForward,
         SiGooglechrome,
+        SiGoogleassistant,
+        SiSlack,
       }}
     >
       {children}
