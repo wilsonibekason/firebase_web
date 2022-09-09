@@ -10,10 +10,14 @@ const CloudMessaging = () => {
         <div className="w-[100%] min-h-[80vh] bg-white shadow-md  rounded-lg">
           <div className={`flex flex-col my-5 `}>
             {/* firebaseCloud */}
-            <FirebaseCloud />
+            <div className="mb-8">
+              <FirebaseCloud />
+            </div>
             <div className={`${borderBottom}`} />
             {/* cloud */}
-            <Cloud />
+            <div className={`my-8`}>
+              <Cloud />
+            </div>
           </div>
         </div>
         <div>

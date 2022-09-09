@@ -12,6 +12,7 @@
     "@react-three/drei": "^9.28.3",
     "@react-three/fiber": "^8.7.2",
     "@reduxjs/toolkit": "^1.8.5",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.1",
     "moment": "^2.29.4",
