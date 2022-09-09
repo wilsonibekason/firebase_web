@@ -5,7 +5,7 @@ import styles from "../../styles/firebaseCustomStyles";
 const Environments = () => {
   const {
     paragraph7,
-    flexCol2,
+    flexCol4,
     paragraph6,
     flexRow,
     flexCentered,
@@ -16,7 +16,7 @@ const Environments = () => {
 
   return (
     <>
-      <div className={`${flexCol2} w-[60%] max-w-[50%] my-6`}>
+      <div className={`${flexCol4} w-[60%] max-w-[50%] my-6`}>
         <div>
           <p className={`${paragraph7}`}>Environments</p>
         </div>

@@ -23,7 +23,9 @@ const styles = {
   flexCol: "relative space-y-2",
   flexCol2: "flex flex-col flex-start space-y-2.5",
   flexCol3: "flex flex-col flex-start space-y-1",
+  flexCol4: "flex flex-col flex-start space-y-4",
   flexRow: "flex flex-row justify-between ",
+  flexRow2: "flex flex-row flex-1 ",
   flexRowAround: "flex flex-1 flex-row flex-start justify-around",
   flexCentered: "flex flex-start items-center justify-center ",
 };

@@ -4,7 +4,7 @@ import styles from "../../styles/firebaseCustomStyles";
 
 const ProjectDetails = () => {
   const {
-    flexCol2,
+    flexCol4,
     flexRow,
     flexRowAround,
     flexCentered,
@@ -15,7 +15,7 @@ const ProjectDetails = () => {
   const { AiOutlineQuestionCircle, MdModeEdit } = useIconContext();
   return (
     <>
-      <div className={`${flexCol2} w-[60%] max-w-[50%] mb-6`}>
+      <div className={`${flexCol4} w-[60%] max-w-[50%] mb-6`}>
         <div className={`${flexRow}`}>
           <div className={`${paragraph6}`}>Project name</div>
           <div className={`${flexCentered} space-x-1`}>

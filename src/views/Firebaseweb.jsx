@@ -11,7 +11,7 @@ const FireWeb = () => {
     BsFillArrowUpRightSquareFill,
   } = useIconContext();
   const navigate = useNavigate();
-  const { flexCol, flexCol2, flexCol3, flexRow } = styles;
+  const { flexCol, flexCol2, flexCol3, flexRow, flexRow2 } = styles;
   return (
     <>
       <div className="flex max-w-full min-h-screen bg-gray-200 tablet:py-10 desktop:py-20 Xdesktop:py-20 tablet:px-0 desktop:px-40 Xdesktop:px-40">
@@ -37,7 +37,7 @@ const FireWeb = () => {
                 </h4>
               </div>
               <div>
-                <div className={`${styles.flexRow} space-x-2 -ml-2 mb-1`}>
+                <div className={`${styles.flexRow2} space-x-2 -ml-2 mb-1`}>
                   <div
                     className={`flex justify-center items-center py-0 px-2 bg-blue-600 rounded-full `}
                   >
@@ -51,7 +51,7 @@ const FireWeb = () => {
                   className={`pl-8 border-l-2 border-solid border-spacing-1 border-gray-300 py-3`}
                 >
                   {" "}
-                  <div className={`${flexRow} items-center space-x-1`}>
+                  <div className={`${flexRow2} items-center space-x-1`}>
                     <p className="font-raleway font-light text-xss text-gray-900">
                       App nickname
                     </p>
@@ -67,7 +67,7 @@ const FireWeb = () => {
                     />
                   </div>
                   <div
-                    className={`${flexRow} items-center ml-3 space-x-2 mb-8`}
+                    className={`${flexRow2} items-center ml-3 space-x-2 mb-8`}
                   >
                     <BsSquareFill
                       className="border border-solid border-gray-700 rounded"
@@ -86,7 +86,7 @@ const FireWeb = () => {
                       for this app
                     </h5>
                     <div
-                      className={`${flexRow} items-center space-x-1 font-robotoCondensed font-normal text-sm text-gray-900 `}
+                      className={`${flexRow2} items-center space-x-1 font-robotoCondensed font-normal text-sm text-gray-900 `}
                     >
                       <a href="" className="text-blue-500 underline">
                         Learn more
@@ -112,7 +112,7 @@ const FireWeb = () => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.flexRow} items-center space-x-2 -ml-2 mt-1`}
+                  className={`${styles.flexRow2} items-center space-x-2 -ml-2 mt-1`}
                 >
                   <div
                     className={`flex justify-center items-center py-0 px-2 bg-blue-600 rounded-full `}

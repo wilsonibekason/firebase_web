@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "../../../styles/firebaseCustomStyles";
-import { Environments, ProjectDetails } from "../../generalsetting";
+import {
+  Environments,
+  ProjectDetails,
+  PublicSetting,
+} from "../../generalsetting";
 
 const General = () => {
   const { flexRow, flexCol, borderBottom, paragraph7 } = styles;
@@ -24,8 +28,10 @@ const General = () => {
             </div>
             <div className={borderBottom} />
             {/* publicSettings */}
-            <div className="mx-7"></div>
-            <div className={borderBottom} />
+            <div className="mx-7">
+              <PublicSetting />
+            </div>
+            {/* <div className={borderBottom} /> */}
           </div>
           {/* </div> */}
         </div>
