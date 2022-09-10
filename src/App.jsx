@@ -9,7 +9,14 @@ import {
   ServiceAccount,
   UsersPermission,
 } from "./components/destopsidebar/settingComponents";
-import { FireWeb, Login, Overview, ProjectSettings, Register } from "./views";
+import {
+  FirebaseAppCheck,
+  FireWeb,
+  Login,
+  Overview,
+  ProjectSettings,
+  Register,
+} from "./views";
 
 const App = () => {
   return (
@@ -26,7 +33,7 @@ const App = () => {
           <Route path="userpermission" element={<UsersPermission />} />
           <Route path="appcheck" element={<AppCheck />} />
         </Route>
-        <Route path="/appcheck" element={<AppCheck />} />
+        <Route path="/appcheck" element={<FirebaseAppCheck />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

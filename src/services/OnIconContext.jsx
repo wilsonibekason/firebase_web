@@ -6,6 +6,8 @@ import {
   BsBoxArrowUpRight,
   BsThreeDotsVertical,
   BsCheck2Square,
+  BsEmojiSmile,
+  BsInfoLg,
 } from "react-icons/bs";
 import { MdOutlineCancel, MdModeEdit } from "react-icons/md";
 import { BiSquare, BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
@@ -51,6 +53,8 @@ export const IconProvider = ({ children }) => {
         BiUpArrowAlt,
         AiOutlineSearch,
         BiDownArrowAlt,
+        BsEmojiSmile,
+        BsInfoLg,
       }}
     >
       {children}

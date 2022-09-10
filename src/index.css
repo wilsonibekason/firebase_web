@@ -387,3 +387,6 @@ background-color: var(--fire-color-featurebar-bg);
 
 }
 
+.appcheck-bg{
+  background: linear-gradient(to right, rgb(42, 54, 61), rgb(61, 75, 84));
+}

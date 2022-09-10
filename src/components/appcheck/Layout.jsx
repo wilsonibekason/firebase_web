@@ -1,5 +1,6 @@
 import React from "react";
 import DesktopSidebar from "../DesktopSidebar";
+import Navbar from "../Navbar";
 import TabletSidebar from "../TabletSidebar";
 
 const Layout = ({ children }) => {
@@ -11,11 +12,11 @@ const Layout = ({ children }) => {
           <TabletSidebar />
         </div>
         <div className="min-h-[30vh] flex-1">
-          <div className=" bg-gray-100 min-h-[100vh] p-3">
+          <div className=" bg-gray-100 min-h-[100vh] ">
             {/* header */}
-            <div className="">
+            {/* <div className="py-3">
               <Navbar />
-            </div>
+            </div> */}
             {/* main content  */}
             {children}
           </div>

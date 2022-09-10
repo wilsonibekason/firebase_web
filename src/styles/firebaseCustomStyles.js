@@ -54,5 +54,9 @@ export const Layout = {
   gridSectionLayout: "grid grid-cols-12 gap-0",
   gridSectionChild: "col-span-4 min-h-[90vh]",
   gridSectionChild2: "col-span-8 max-h-[90vh]",
+  appCheckGridSectionLayout:
+    "grid grid-cols-1 md:grid-col-1 lg:grid-cols-12 gap-4",
+  appCheckGridSectionChild: "col-span-1 md:col-span-1 lg:col-span-4 ",
+  appCheckGridSectionChild2: "col-span-1 md:col-span-1 lg:col-span-8 ",
 };
 export default styles;
