@@ -8,7 +8,7 @@ import {
   BsCheck2Square,
 } from "react-icons/bs";
 import { MdOutlineCancel, MdModeEdit } from "react-icons/md";
-import { BiSquare } from "react-icons/bi";
+import { BiSquare, BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
 import { FiCheckSquare } from "react-icons/fi";
 import { FaGoogleDrive, FaKey } from "react-icons/fa";
 import { GrCheckmark } from "react-icons/gr";
@@ -18,6 +18,7 @@ import {
   AiOutlineCaretDown,
   AiFillDatabase,
   AiFillSetting,
+  AiOutlineSearch,
 } from "react-icons/ai";
 import { SiGooglechrome, SiGoogleassistant, SiSlack } from "react-icons/si";
 const IconsContext = createContext({});
@@ -47,6 +48,9 @@ export const IconProvider = ({ children }) => {
         AiFillDatabase,
         AiFillSetting,
         BsCheck2Square,
+        BiUpArrowAlt,
+        AiOutlineSearch,
+        BiDownArrowAlt,
       }}
     >
       {children}

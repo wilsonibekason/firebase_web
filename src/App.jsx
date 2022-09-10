@@ -23,7 +23,7 @@ const App = () => {
           <Route path="integration" element={<Integration />} />
           <Route path="serviceaccount" element={<ServiceAccount />} />
           <Route path="dataprivacy" element={<DataPrivacy />} />
-          <Route path="userspermission" element={<UsersPermission />} />
+          <Route path="userpermission" element={<UsersPermission />} />
           <Route path="appcheck" element={<AppCheck />} />
         </Route>
 

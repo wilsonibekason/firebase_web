@@ -52,7 +52,7 @@ const Navbar = () => {
             />
           </div> */}
           <div
-            className="flex items-center space-x-1"
+            className="flex items-center space-x-1 phone:hidden"
             onClick={() => setModalClick((prev) => !prev)}
           >
             <h6 className="font-raleway font-normal text-sm text-gray-200 ">
@@ -63,7 +63,7 @@ const Navbar = () => {
               className="text-white font-semibold"
             />
           </div>
-          <div className="font-raleway font-semibold text-sm  capitalize text-gray-300 block desktop:hidden target:block  Xdesktop:hidden">
+          <div className="font-raleway font-semibold text-sm  capitalize text-gray-300 block desktop:hidden target:block  Xdesktop:hidden phone:hidden">
             overview
           </div>
         </div>

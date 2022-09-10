@@ -10,7 +10,7 @@ import { GiHamburgerMenu, GiWorld } from "react-icons/gi";
 import { ImBell, ImCancelCircle } from "react-icons/im";
 import { FaHome, FaCubes, FaRobot } from "react-icons/fa";
 import { FcSettings } from "react-icons/fc";
-import { BiRightArrow, BiCodeAlt } from "react-icons/bi";
+import { BiRightArrow, BiCodeAlt, BiUpArrowAlt } from "react-icons/bi";
 import {
   AiOutlineSetting,
   AiOutlineEye,
