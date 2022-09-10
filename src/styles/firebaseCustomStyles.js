@@ -10,6 +10,7 @@ const styles = {
   paragraph7: "font-raleway font-semibold text-sm text-gray-800",
   paragraph8: "font-raleway font-semibold text-xss text-gray-800",
   paragraph9: "font-raleway font-medium text-sm text-blue-600 ",
+  paragraph10: "font-raleway font-semibold text-sm text-white",
   hreftext: "font-raleway font-medium text-xss text-blue-500",
   ulbg: "hover:bg-gray-900",
   iconBox:

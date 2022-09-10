@@ -1,6 +1,7 @@
 import React from "react";
 import { useIconContext } from "../../../services/OnIconContext";
 import styles, { Layout } from "../../../styles/firebaseCustomStyles";
+import { AdminSide } from "../../serviceaccount";
 const ServiceAccount = () => {
   const { BiSquare } = useIconContext();
   const { gridSectionLayout, gridSectionChild, gridSectionChild2 } = Layout;
@@ -19,7 +20,7 @@ const ServiceAccount = () => {
           <div
             className={`${gridSectionChild} bg-gray-50 rounded-l-lg shadow-lg`}
           >
-            hdhdhdhd
+            <AdminSide />
           </div>
           <div className={`${gridSectionChild2} bg-white rounded-r-lg shadow`}>
             hello section 3
