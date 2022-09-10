@@ -5,7 +5,7 @@ const CardView = () => {
   return (
     <>
       <div
-        className="flex flex-row justify-between  pt-10
+        className="flex flex-row justify-between  pt-10 mx-2 md:mx-0
       "
       >
         <div className="font-raleway font-semibold text-gray-600 text-xl">
@@ -14,7 +14,7 @@ const CardView = () => {
         {/* desktop:overflow-hidden Xdesktop:overflow-hidden */}
         <ImCancelCircle className="text-2xl font-bold text-gray-600" />
       </div>
-      <div className="overflow-visible overflow-x-auto  flex flex-row basis-full gap-8 mt-6">
+      <div className="overflow-visible overflow-x-auto scrollbar-thin flex flex-row basis-full gap-8 mt-6 mx-2 md:mx-0">
         <div className="flex flex-grow flex-auto w-[30%] gap-4">
           {/* cards */}
           <div className="flex flex-col rounded-lg w-full shadow hover:shadow-xl group ">
@@ -32,6 +32,7 @@ const CardView = () => {
               </p>
             </div>
           </div>
+          {/* flex card container */}
           <div className="flex flex-col rounded-lg w-full shadow hover:shadow-xl group ">
             <img
               src="https://www.gstatic.com/mobilesdk/180326_mobilesdk/discoverycards/performance.png"
@@ -47,6 +48,7 @@ const CardView = () => {
               </p>
             </div>
           </div>
+          {/* flex card container */}
         </div>
       </div>
       <div className="flex text-blue-500 justify-end mt-4">

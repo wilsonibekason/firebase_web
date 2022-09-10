@@ -1,10 +1,16 @@
 import React from "react";
+import { useIconContext } from "../../services/OnIconContext";
 import styles from "../../styles/firebaseCustomStyles";
 import { recentProjects } from "../../utils/data";
 
 const ProjectModalView = () => {
+  const { visibleSidebar } = useIconContext();
   return (
-    <div className="overflow-visible overflow-y-auto left-0 right-0 top-0 tablet:inset-0 md:h-full  z-50">
+    <div
+      className={` ${
+        visibleSidebar ? "relative" : ""
+      } overflow-visible overflow-y-auto left-0 right-0 top-0 tablet:inset-0 md:h-full  z-50`}
+    >
       <div className="  ml-1 absolute max-w-[50%] h-full w-full ">
         <div className="absolute h-[40%] w-[40%] bg-white rounded-l-lg  overflow-visible overflow-y-auto  scrollbar-thumb-gray-400  scrollbar-thumb-rounded ">
           {/* rendering contents  current projects scrollbar-corner-white scrollbar-track-white*/}

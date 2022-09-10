@@ -12,6 +12,7 @@ const styles = {
   paragraph9: "font-raleway font-medium text-sm text-blue-600 ",
   paragraph10: "font-raleway font-semibold text-sm text-white",
   paragraph11: "font-raleway font-medium text-[12px] text-gray-400 ",
+  paragraph12: " text-sm",
   hreftext: "font-raleway font-medium text-xss text-blue-500",
   ulbg: "hover:bg-gray-900",
   iconBox:
@@ -39,6 +40,8 @@ const styles = {
   transitions: "transition duration-500 ease-in-out",
   buttonStyle:
     "py-2 px-3 bg-blue-500  rounded-lg font-raleway font-medium text-gray-200 text-sm  hover:bg-blue-700 transition duration-300 ease-in-out",
+  buttonStyles2:
+    "bg-blue-500  rounded-lg font-raleway font-medium text-gray-200 text-sm  hover:bg-blue-700 transition duration-300 ease-in-out",
 };
 
 export const Layout = {

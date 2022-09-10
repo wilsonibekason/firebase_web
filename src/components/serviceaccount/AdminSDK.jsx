@@ -53,11 +53,11 @@ const AdminSDK = () => {
       <div className={`px-8`}>
         <div className={` ${flexRow2} space-x-4`}>
           {highlightData.map((item, index) => (
-            <div class="flex items-center mb-4 space-x-2" key={index}>
+            <div class="flex items-center mb-4 space-x-2 " key={index}>
               <input
                 type="radio"
                 value="code"
-                className="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-1 "
+                className="w-6 h-6 text-blue-600 focus:ring-blue-500 rounded-lg focus:ring-1 "
               />
               <label
                 for="default-radio-1"
