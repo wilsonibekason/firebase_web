@@ -11,6 +11,7 @@ const styles = {
   paragraph8: "font-raleway font-semibold text-xss text-gray-800",
   paragraph9: "font-raleway font-medium text-sm text-blue-600 ",
   paragraph10: "font-raleway font-semibold text-sm text-white",
+  paragraph11: "font-raleway font-medium text-[12px] text-gray-400 ",
   hreftext: "font-raleway font-medium text-xss text-blue-500",
   ulbg: "hover:bg-gray-900",
   iconBox:
@@ -28,6 +29,7 @@ const styles = {
   flexCol2: "flex flex-col flex-start space-y-2.5",
   flexCol3: "flex flex-col flex-start space-y-1",
   flexCol4: "flex flex-col flex-start space-y-4",
+  flexCol5: "flex flex-col flex-start space-y-0.5",
   flexRow: "flex flex-row justify-between ",
   flexRow2: "flex flex-row flex-1 ",
   flexRowAround: "flex flex-1 flex-row flex-start justify-around",
@@ -35,6 +37,8 @@ const styles = {
   flexCentered2: "flex flex-start items-center",
   flexEnd: "flex justify-end items-center",
   transitions: "transition duration-500 ease-in-out",
+  buttonStyle:
+    "py-2 px-3 bg-blue-500  rounded-lg font-raleway font-medium text-gray-200 text-sm  hover:bg-blue-700 transition duration-300 ease-in-out",
 };
 
 export const Layout = {

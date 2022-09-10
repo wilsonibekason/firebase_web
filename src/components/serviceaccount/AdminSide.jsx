@@ -12,7 +12,7 @@ const AdminSide = () => {
     paragraph8,
     paragraph7,
   } = styles;
-  const { FaKey, AiFillDatabase, AiFillSetting, BsSquareFill } =
+  const { FaKey, AiFillDatabase, AiFillSetting, BsSquareFill, BsCheck2Square } =
     useIconContext();
 
   return (
@@ -38,7 +38,7 @@ const AdminSide = () => {
             >
               <AiFillDatabase className={`text-gray-500 `} />
             </div>
-            <h5 className={`${paragraph7} `}>Database Secret</h5>
+            <h5 className={`${paragraph7} `}>Database secret</h5>
           </div>
         </div>
       </div>
@@ -53,9 +53,9 @@ const AdminSide = () => {
             >
               <AiFillSetting className={`text-gray-500 `} />
             </div>
-            <div className={`${flexRow2} space-x-1 items-center`}>
-              <h5 className={`${paragraph7} `}>10 Service accounts</h5>
-              <BsSquareFill size={13} className="text-gray-500" />
+            <div className={`${flexRow2} space-x-0.5 items-center`}>
+              <h5 className={`${paragraph7} `}>9 service accounts </h5>
+              <BsCheck2Square size={15} className="text-gray-900" />
             </div>
           </div>
         </div>

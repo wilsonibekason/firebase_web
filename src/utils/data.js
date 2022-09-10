@@ -111,3 +111,18 @@ export const tabElements = [
     customStyles: "",
   },
 ];
+
+export const highlightData = [
+  {
+    name: "nodejs",
+  },
+  {
+    name: "java",
+  },
+  {
+    name: "python",
+  },
+  {
+    name: "go",
+  },
+];

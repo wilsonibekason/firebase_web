@@ -5,6 +5,7 @@ import {
   BsFillArrowUpRightSquareFill,
   BsBoxArrowUpRight,
   BsThreeDotsVertical,
+  BsCheck2Square,
 } from "react-icons/bs";
 import { MdOutlineCancel, MdModeEdit } from "react-icons/md";
 import { BiSquare } from "react-icons/bi";
@@ -45,6 +46,7 @@ export const IconProvider = ({ children }) => {
         FaKey,
         AiFillDatabase,
         AiFillSetting,
+        BsCheck2Square,
       }}
     >
       {children}

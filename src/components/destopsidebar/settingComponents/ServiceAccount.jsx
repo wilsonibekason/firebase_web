@@ -1,19 +1,19 @@
 import React from "react";
 import { useIconContext } from "../../../services/OnIconContext";
 import styles, { Layout } from "../../../styles/firebaseCustomStyles";
-import { AdminSide } from "../../serviceaccount";
+import { AdminSDK, AdminSide } from "../../serviceaccount";
 const ServiceAccount = () => {
-  const { BiSquare } = useIconContext();
+  const { BiSquare, BsCheck2Square } = useIconContext();
   const { gridSectionLayout, gridSectionChild, gridSectionChild2 } = Layout;
   const { paragraph9, flexEnd } = styles;
   return (
     <>
       <div className={`flex flex-col mx-40 my-20 space-y-4 `}>
-        <div className={`${flexEnd}`}>
+        <div className={`${flexEnd} space-x-0.5`}>
           <h4 className={`${paragraph9} underline`}>
             Manage service account permissions
           </h4>
-          <BiSquare className="text-blue-600" />
+          <BsCheck2Square className="text-blue-500" size={13} />
         </div>
         {/* main component layout */}
         <div className={` ${gridSectionLayout}  `}>
@@ -23,7 +23,7 @@ const ServiceAccount = () => {
             <AdminSide />
           </div>
           <div className={`${gridSectionChild2} bg-white rounded-r-lg shadow`}>
-            hello section 3
+            <AdminSDK />
           </div>
           <div></div>
         </div>
