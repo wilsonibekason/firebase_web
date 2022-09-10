@@ -3,3 +3,4 @@ export { default as FireWeb } from "./Firebaseweb";
 export { default as ProjectSettings } from "./ProjectSettings";
 export { default as Login } from "./auth/Login";
 export { default as Register } from "./auth/Register";
+export { default as FirebaseAppCheck } from "./AppCheck";
