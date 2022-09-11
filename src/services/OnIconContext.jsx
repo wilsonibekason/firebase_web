@@ -21,6 +21,7 @@ import {
   AiFillDatabase,
   AiFillSetting,
   AiOutlineSearch,
+  AiOutlineArrowRight,
 } from "react-icons/ai";
 import { SiGooglechrome, SiGoogleassistant, SiSlack } from "react-icons/si";
 const IconsContext = createContext({});
@@ -55,6 +56,7 @@ export const IconProvider = ({ children }) => {
         BiDownArrowAlt,
         BsEmojiSmile,
         BsInfoLg,
+        AiOutlineArrowRight,
       }}
     >
       {children}

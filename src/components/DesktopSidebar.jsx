@@ -52,7 +52,7 @@ const DesktopSidebar = () => {
   return (
     <div
       className={` ${
-        open ? "w-64 duration-300 " : "w-16 duration-1000 delay-500"
+        open ? "w-64 duration-300 " : "w-16 duration-500"
       } hidden md:hidden lg:block bg-[#00001a] h-auto transition-all ease-linear   pt-1 relative  `}
     >
       <img

@@ -1,7 +1,7 @@
 import React from "react";
 import { useIconContext } from "../../services/OnIconContext";
 import styles, { Layout } from "../../styles/firebaseCustomStyles";
-
+import { useGlobalContext } from "../../services/OnGlobalContext";
 const AppCheckLearnMore = () => {
   const {
     appCheckGridSectionChild,
@@ -17,9 +17,10 @@ const AppCheckLearnMore = () => {
     borderBottom,
   } = styles;
   const { BsEmojiSmile, BsInfoLg, AiFillSetting } = useIconContext();
+  const { open } = useGlobalContext();
   return (
     <>
-      <div className="mx-44 my-20">
+      <div className={` ${!open ? "mx-44" : "mx-20"} my-20`}>
         <div className={`${flexCol6} space-y-10`}>
           <h3 className={`text-xl font-raleway font-medium text-gray-500 `}>
             Learn more
@@ -104,7 +105,12 @@ const AppCheckLearnMore = () => {
             <div className={`${appCheckGridSectionChild2}`}>
               <div
                 className={`w-full shadow-md rounded-md border-2 border-spacing-2 border-solid bg-white h-[47vh]`}
-              ></div>
+              >
+                <iframe
+                  className="w-full h-full rounded-lg shadow-lg"
+                  src={"https://www.youtube.com/watch?v=DiSvq5SgLMI"}
+                ></iframe>
+              </div>
             </div>
           </div>
           <div className={`${borderBottom}`} />

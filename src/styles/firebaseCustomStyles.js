@@ -33,6 +33,7 @@ const styles = {
   flexCol4: "flex flex-col flex-start space-y-4",
   flexCol5: "flex flex-col flex-start space-y-0.5",
   flexCol6: "flex flex-col flex-start",
+  flexCol7: "flex flex-col",
   flexRow: "flex flex-row justify-between ",
   flexRow2: "flex flex-row flex-1 ",
   flexRowAround: "flex flex-1 flex-row flex-start justify-around",
@@ -58,5 +59,8 @@ export const Layout = {
     "grid grid-cols-1 md:grid-col-1 lg:grid-cols-12 gap-4",
   appCheckGridSectionChild: "col-span-1 md:col-span-1 lg:col-span-4 ",
   appCheckGridSectionChild2: "col-span-1 md:col-span-1 lg:col-span-8 ",
+  appCheckFeaturesSection:
+    "grid phone:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-3 Xdesktop:grid-cols-3 gap-4 desktop:gap-4 Xdesktop:gap-3",
+  appCheckFeaturesChild: "",
 };
 export default styles;
