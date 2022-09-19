@@ -9,9 +9,9 @@ import {
   BsEmojiSmile,
   BsInfoLg,
 } from "react-icons/bs";
-import { MdOutlineCancel, MdModeEdit } from "react-icons/md";
+import { MdOutlineCancel, MdModeEdit, MdContentCopy } from "react-icons/md";
 import { BiSquare, BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
-import { FiCheckSquare } from "react-icons/fi";
+import { FiCheckSquare, FiCopy } from "react-icons/fi";
 import { FaGoogleDrive, FaKey } from "react-icons/fa";
 import { GrCheckmark } from "react-icons/gr";
 import { IoMdArrowForward } from "react-icons/io";
@@ -57,6 +57,8 @@ export const IconProvider = ({ children }) => {
         BsEmojiSmile,
         BsInfoLg,
         AiOutlineArrowRight,
+        FiCopy,
+        MdContentCopy,
       }}
     >
       {children}

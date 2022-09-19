@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import FirebaseWebSecond from "../components/firebaseweb/second/FirebaseWebSecond";
 import { useIconContext } from "../services/OnIconContext";
 import styles from "../styles/firebaseCustomStyles";
 const FireWeb = () => {
@@ -63,7 +64,7 @@ const FireWeb = () => {
                       name=""
                       id=""
                       placeholder="My web app"
-                      className="border border-solid border-gray-500 outline-none bg-white w-[26rem] py-1.5 px-2 rounded  placeholder:font-light placeholder:font-raleway placeholder:text-gray-500 focus:border-blue-400 focus:border-2 text-gray-800 font-raleway font-normal"
+                      className="border border-solid border-gray-500 outline-none bg-white w-[26rem] py-1.5 px-2 rounded  placeholder:font-light placeholder:font-raleway placeholder:text-gray-500 focus:border-blue-400 focus:border-2 text-gray-800 font-raleway font-normal "
                     />
                   </div>
                   <div
@@ -123,6 +124,8 @@ const FireWeb = () => {
                     Add firebase SDK
                   </h4>
                 </div>
+                {/* b */}
+                <FirebaseWebSecond />
               </div>
             </div>
           </div>

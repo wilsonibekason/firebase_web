@@ -27,8 +27,7 @@ const AdminSDK = () => {
   } = styles;
   const {} = useIconContext();
   const codeString = "(num) => num + 1";
-  const java =
-    'var admin = require("firebase-admin"); var serviceAccount = require("path/to/serviceAccountKey.json"); admin.initializeApp({credential: admin.credential.cert(serviceAccount)})';
+  const java = "";
   return (
     <div className={`${flexCol4} pt-4 `}>
       <div className={`${flexCol4} px-8`}>
@@ -43,7 +42,7 @@ const AdminSDK = () => {
           </p>
         </div>
         <div className={`${flexCol5}`}>
-          <p className={`${paragraph6}`}>Firebase service account</p>
+          <p className={`${paragraph6} `}>Firebase service account</p>
           <h4 className={`${paragraph7}`}>
             firebase-adminsdk-dz1mb@linkedin-app-d5d09.iam.gserviceaccount.com
           </h4>
@@ -57,11 +56,11 @@ const AdminSDK = () => {
               <input
                 type="radio"
                 value="code"
-                className="w-6 h-6 text-blue-600 focus:ring-blue-500 rounded-lg focus:ring-1 "
+                className="w-6 h-6 text-blue-600 focus:ring-blue-500 rounded-full focus:ring-1 "
               />
               <label
                 for="default-radio-1"
-                className={`${paragraph11} capitalize tracking-normal `}
+                className={`${paragraph11} font-helviticaTin capitalize tracking-normal `}
               >
                 {item.name}
               </label>
@@ -71,9 +70,13 @@ const AdminSDK = () => {
         <SyntaxHighlighter
           language="javascript"
           style={gruvboxLight}
-          className=" scrollbar-thin scrollbar-track-gray-500"
+          className=" scrollbar-thin scrollbar-thumb-gray-500 "
         >
-          {java}
+          {` 
+           var admin = require("firebase-admin");
+           var serviceAccount = require("path/to/serviceAccountKey.json");
+           admin.initializeApp({credential: admin.credential.cert(serviceAccount)})
+         `}
         </SyntaxHighlighter>
       </div>
 

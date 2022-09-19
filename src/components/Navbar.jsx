@@ -73,7 +73,7 @@ const Navbar = () => {
         </div>
         {/* right column */}
         <div className="flex flex-row gap-2 md:gap-3 lg:gap-4 items-center">
-          <h4 className="font-raleway font-semibold text-sm text-white phone:hidden tablet:hidden laptop:block desktop:block Xdesktop:block">
+          <h4 className="font-raleway font-semibold text-sm text-white phone:hidden tablet:hidden laptop:block desktop:block Xdesktop:block cursor-pointer hover:text-gray-300 ">
             go to docs
           </h4>
 

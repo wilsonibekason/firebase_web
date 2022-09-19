@@ -34,6 +34,7 @@ const styles = {
   flexCol5: "flex flex-col flex-start space-y-0.5",
   flexCol6: "flex flex-col flex-start",
   flexCol7: "flex flex-col",
+  flexRowMain: "flex flex-row",
   flexRow: "flex flex-row justify-between ",
   flexRow2: "flex flex-row flex-1 ",
   flexRowAround: "flex flex-1 flex-row flex-start justify-around",
