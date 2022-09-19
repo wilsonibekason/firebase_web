@@ -1,21 +1,22 @@
 import React from "react";
 import styles, { Layout } from "../../styles/firebaseCustomStyles";
-
+import { useGlobalContext } from "../../services/OnGlobalContext";
 const AppCheckFeatures = () => {
   const { appCheckFeaturesSection } = Layout;
 
   const { flexCol6, flexRow2, paragraph5, paragraph6, flexCol7, transitions } =
     styles;
+  const { open } = useGlobalContext();
   return (
     <>
-      <div className={`mx-44 `}>
+      <div className={` ${open ? "mx-20" : "mx-44"}`}>
         <div className={`${flexCol6} space-y-8`}>
           <h3 className={`text-xl font-raleway font-medium text-gray-500 `}>
             More features for developers
           </h3>
           <div className={`${appCheckFeaturesSection}`}>
             <div
-              className={`${flexCol6} rounded-md shadow-md bg-white hover:shadow-xl ${transitions}`}
+              className={`${flexCol6} rounded-md shadow-md bg-white hover:shadow-xl ${transitions} cursor-pointer`}
             >
               <div className={` `}>
                 <img
@@ -39,7 +40,7 @@ const AppCheckFeatures = () => {
               </div>
             </div>
             <div
-              className={`${flexCol6} rounded-md shadow-md bg-white hover:shadow-xl ${transitions}`}
+              className={`${flexCol6} rounded-md shadow-md bg-white hover:shadow-xl ${transitions} cursor-pointer`}
             >
               <div className={` `}>
                 <img
@@ -63,7 +64,7 @@ const AppCheckFeatures = () => {
               </div>
             </div>
             <div
-              className={`${flexCol6} rounded-md shadow-md bg-white hover:shadow-xl ${transitions}`}
+              className={`${flexCol6} rounded-md shadow-md bg-white hover:shadow-xl ${transitions} cursor-pointer`}
             >
               <div className={` `}>
                 <img
@@ -88,7 +89,7 @@ const AppCheckFeatures = () => {
             </div>
           </div>
           <div className="flex text-blue-500 justify-end mt-4">
-            <a href="" className="hover:underline">
+            <a href="" className="hover:underline cursor-pointer">
               See all Build Features
             </a>
           </div>

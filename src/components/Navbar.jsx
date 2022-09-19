@@ -5,6 +5,7 @@ import { useGlobalContext } from "../services/OnGlobalContext";
 import { projects } from "../utils/data";
 import { ImBell } from "react-icons/im";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { UserModal } from "./modals";
 const Navbar = () => {
   const {
     GiHamburgerMenu,
@@ -18,9 +19,12 @@ const Navbar = () => {
     visibleNav,
     onModalClick,
     setModalClick,
+    setOnUserModal,
+    onUserModal,
   } = useGlobalContext();
   return (
     <>
+      {!onUserModal && <UserModal />}
       <nav
         className={`flex flex-row justify-between ${
           !visibleNav ? "navbar-bg-initial" : "navbar-bg-final"
@@ -52,7 +56,7 @@ const Navbar = () => {
             />
           </div> */}
           <div
-            className="flex items-center space-x-1 phone:hidden"
+            className="hidden items-center space-x-1  md:flex"
             onClick={() => setModalClick((prev) => !prev)}
           >
             <h6 className="font-raleway font-normal text-sm text-gray-200 ">
@@ -74,17 +78,24 @@ const Navbar = () => {
           </h4>
 
           <div className="relative">
-            <ImBell className="font-bold text-2xl " />
+            <ImBell className="font-bold text-2xl hover:text-black" />
             <div className="absolute inset-y-0 right-2 flex items-center pl-1.5 bg-red-500 w-2 h-2 rounded-full"></div>
           </div>
           <div className="phone:block tablet:block laptop:hidden desktop:hidden Xdesktop:hidden">
             <BsThreeDotsVertical className="text-2xl" />
           </div>
-          <div>
+          <div
+            onClick={() => setOnUserModal((prev) => !prev)}
+            // onMouseEnter={() => setOnUserModal((prev) => !prev)}
+            //onMouseLeave={() => setOnUserModal((prev) => !prev)}
+            className=""
+          >
             <img
               src="https://lh3.googleusercontent.com/ogw/AOh-ky0Y0GWS8yodSDtiKJ6FOlNqNxLYt0B--1EThip08A=s32-c-mo"
               alt=""
-              className="phone:w-6 phone:h-6  tablet:w-6 tablet:h-6 desktop:w-8 desktop:h-8 Xdesktop:w-[34px] Xdesktop:h-[34px] rounded-full "
+              className="phone:w-6 phone:h-6  tablet:w-6 tablet:h-6 desktop:w-8 desktop:h-8 Xdesktop:w-[34px] Xdesktop:h-[34px] rounded-full p-1 hover:shadow"
+              // onMouseEnter={() => setOnUserModal((prev) => !prev)}
+              // onMouseLeave={() => setOnUserModal((prev) => !prev)}
             />
           </div>
         </div>

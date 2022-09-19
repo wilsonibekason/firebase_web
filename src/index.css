@@ -354,7 +354,19 @@ button, select, html, textarea, input {
     --donotuse-environment-badge-background: var(--fire-color-badge-font);
     --donotuse-environment-badge-outline: var(--fire-color-black-border);
 }
-
+/* font family initialisatiion */
+@font-face{
+  font-family: "HelveticaNeueHv";
+  src: url('../public/fonts/HelveticaNeueHv.ttf');
+}
+@font-face {
+  font-family: "HelveticaNeueTin";
+  src: url('../public/fonts/HelveticaNeue\ Thin.ttf');
+}
+@font-face {
+  font-family: "HelveticaNeueBlack";
+  src: url("../public/fonts/HelveticaNeue\ BlackCond.ttf");
+}
 .bg-header-color{
   --fire-color-primary-header-bg: linear-gradient(to bottom,#1a73e8 50%,#4285f4 100%);
 }

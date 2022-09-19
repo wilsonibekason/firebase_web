@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/**/*,{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       screens: {
@@ -14,6 +14,9 @@ module.exports = {
         raleway: ["Raleway", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         playfair: ["Playfair", "sans-serif"],
+        helvitica: ["HelveticaNeueHv", "sans-serif"],
+        helviticaTin: ["HelveticaNeueTin", "sans-serif"],
+        helveticaNeueBlack: ["HelveticaNeueBlack", "sans-serif"],
         robotoCondensed: ["RobotoCondensed", "sans-serif"],
       },
       fontSize: {

@@ -65,6 +65,7 @@ export const GlobalProvider = ({ children }) => {
   const [onModalClick, setModalClick] = useState(false);
   const [onSettingModal, setOnSettingModal] = useState(false);
   const [open, setOpen] = useState(false);
+  const [onUserModal, setOnUserModal] = useState(false);
   const loadLazyContent = useRef(null);
 
   const scrollChange = () => {
@@ -233,6 +234,8 @@ export const GlobalProvider = ({ children }) => {
         onSettingModal,
         open,
         setOpen,
+        onUserModal,
+        setOnUserModal,
       }}
     >
       {children}

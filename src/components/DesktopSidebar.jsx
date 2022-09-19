@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {} from "react-icons/io";
 import { Navbar } from "./../components";
 import { useGlobalContext } from "./../services/OnGlobalContext";
@@ -62,23 +62,26 @@ const DesktopSidebar = () => {
         onClick={() => setOpen(!open)}
       />
       {/* gap-x-4 */}
-      <div className="flex gap-x-4 items-center px-5 py-2">
-        <img
-          // src="./src/assets/logo.png"
-          onClick={() => navigate("/", { replace: true })}
-          src={firebaseLogo}
-          className={`cursor-pointer duration-500 w-7 h-7 ${
-            open && "rotate-[360deg]"
-          }`}
-        />
-        <h1
-          className={`text-white origin-left font-medium text-xl duration-200 capitalize ${
-            !open && "scale-0"
-          }`}
-        >
-          firebase
-        </h1>
-      </div>
+      <Link to={"/"}>
+        <div className="flex gap-x-4 items-center px-5 py-2">
+          <img
+            // src="./src/assets/logo.png"
+            onClick={() => navigate("/", { replace: true })}
+            src={firebaseLogo}
+            className={`cursor-pointer duration-500 w-7 h-7 ${
+              open && "rotate-[360deg]"
+            }`}
+          />
+
+          <h1
+            className={`text-white origin-left font-medium text-xl duration-200 capitalize ${
+              !open && "scale-0"
+            }`}
+          >
+            firebase
+          </h1>
+        </div>
+      </Link>
       {/* <hr className="w-full h-px text-gray-300" /> */}
       <div className="w-full h-px border-[0.001px] border-gray-900" />
       {/* scrollable sections */}

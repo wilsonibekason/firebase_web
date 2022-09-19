@@ -30,7 +30,7 @@ const AppCheckLearnMore = () => {
               <div className={`${flexCol6}`}>
                 {/* container first one  */}
                 <div
-                  className={` group bg-white rounded-t-lg border-b-2 shadow-md`}
+                  className={` group bg-white rounded-t-lg border-b-2 shadow-md cursor-pointer`}
                 >
                   <div
                     className={` group-hover:bg-gray-200 rounded-t-lg ${transitions}`}
@@ -55,7 +55,9 @@ const AppCheckLearnMore = () => {
                   </div>
                 </div>
                 {/* container one */}
-                <div className={` group bg-white border-b-2 shadow-md`}>
+                <div
+                  className={` group bg-white border-b-2 shadow-md cursor-pointer`}
+                >
                   <div className={` group-hover:bg-gray-200  ${transitions}`}>
                     <div
                       className={`${flexRow2} px-5 py-6 space-x-2 items-center`}
@@ -77,7 +79,9 @@ const AppCheckLearnMore = () => {
                   </div>
                 </div>
                 {/* container two */}
-                <div className={` group bg-white rounded-b-lg shadow-md`}>
+                <div
+                  className={` group bg-white rounded-b-lg shadow-md cursor-pointer`}
+                >
                   <div
                     className={` group-hover:bg-gray-200 rounded-b-lg ${transitions}`}
                   >

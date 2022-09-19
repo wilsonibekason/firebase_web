@@ -4,6 +4,7 @@ import { useGlobalContext } from "../../services/OnGlobalContext";
 import styles from "../../styles/firebaseCustomStyles";
 import ProjectModalView from "./ProjectModalView";
 import SettingModal from "./SettingModal";
+import { UserModal } from "../modals";
 import Tooltip from "./TooltipElement";
 
 const FeatureHeader = () => {
@@ -36,12 +37,14 @@ const FeatureHeader = () => {
     onModalClick,
     setModalClick,
     onSettingModal,
+    onUserModal,
   } = useGlobalContext();
   const navigate = useNavigate();
   return (
     <>
       {onModalClick && <ProjectModalView />}
       {onSettingModal && <SettingModal />}
+      {/* {!onUserModal && <UserModal />} */}
       <div
         className={` flex flex-start flex-col  transition duration-100 pt-5 phone:px-4 desktop:px-20 Xdesktop:px-20 tablet:px-10`}
       >

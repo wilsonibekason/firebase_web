@@ -7,14 +7,16 @@ const AppCheckHeader = () => {
 
   return (
     <>
-      <div className="min-h-[50vh]  appcheck-bg z-[999]">
+      <div className="min-h-[50vh]  appcheck-bg z-[999] ">
         {/* navbar */}
         <div className="py-3">
           <Navbar />
         </div>
         <div className=" relative px-44 pt-20 pb-32 flex ">
           <div className={`flex items-start flex-col space-y-6 justify-center`}>
-            <h2 className={`text-[40px] font-raleway font-semibold text-white`}>
+            <h2
+              className={`text-[40px] font-helviticaTin  font-thin text-white capitalize`}
+            >
               App check
             </h2>
             <p
