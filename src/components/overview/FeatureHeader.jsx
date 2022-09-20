@@ -53,7 +53,7 @@ const FeatureHeader = () => {
           <h1 className="font-raleway font-semibold text-3xl header-text">
             linkedin_app
           </h1>
-          <span className=" font-raleway font-semibold border border-solid border-gray-300 w-24 h-5 py-2.5 rounded-xl flex justify-center items-center text-xss bg-blue-700 capitalize text-white shadow hover:bg-blue-300 transition ease-in duration-150 focus:bg-blue-300">
+          <span className=" font-raleway font-semibold border border-solid border-gray-300 w-24 h-5 py-2.5 rounded-xl flex justify-center items-center text-xss bg-blue-700 capitalize text-white shadow hover:bg-blue-300 transition ease-in duration-150 focus:bg-blue-300 cursor-pointer">
             spark plan
           </span>
         </div>

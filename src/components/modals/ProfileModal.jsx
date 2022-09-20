@@ -71,7 +71,7 @@ const ProfileModal = () => {
                                 "https://lh3.googleusercontent.com/ogw/AOh-ky0Y0GWS8yodSDtiKJ6FOlNqNxLYt0B--1EThip08A=s32-c-mo"
                               }
                               alt=""
-                              className="w-16 h-16 object-cover "
+                              className="w-16 h-16 object-cover cursor-pointer"
                             />
                             <div
                               className={`absolute right-0 bottom-1 p-1 bg-white shadow-lg rounded-full`}
@@ -96,7 +96,7 @@ const ProfileModal = () => {
                         <div className={`${flexCentered}`}>
                           <div className={`py-1 px-3 rounded-lg shadow `}>
                             <h4
-                              className={`${paragraph13} text-gray-500 font-helveticaNeueMed font-bold tracking-wider `}
+                              className={`${paragraph13} text-gray-500 font-helveticaNeueMed font-bold tracking-wider cursor-pointer`}
                             >
                               manage your google account
                             </h4>
@@ -145,7 +145,7 @@ const ProfileModal = () => {
                           </div>
                           <div className={`${flexCol7}`}>
                             <h4
-                              className={`${paragraph13} text-gray-600 font-robotoCondensed `}
+                              className={`${paragraph13} text-gray-600 font-robotoCondensed cursor-pointer`}
                             >
                               Add another account
                             </h4>
@@ -160,7 +160,7 @@ const ProfileModal = () => {
                         <div className={`${flexCentered}`}>
                           <div className={`py-1 px-3 rounded-lg shadow`}>
                             <h4
-                              className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal `}
+                              className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal cursor-pointer`}
                             >
                               {" "}
                               sign out of all devices
@@ -169,12 +169,12 @@ const ProfileModal = () => {
                         </div>
                         <div className={`${flexBetween}`}>
                           <p
-                            className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal tracking-wide `}
+                            className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal tracking-wide cursor-pointer`}
                           >
                             privacy policy
                           </p>
                           <p
-                            className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal tracking-wide `}
+                            className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal tracking-wide cursor-pointer`}
                           >
                             terms of services
                           </p>

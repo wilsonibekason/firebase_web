@@ -1,6 +1,7 @@
 import { createSlice, createReducer } from "@reduxjs/toolkit";
 const initialState = {
   onOpenDropdown: false,
+  onModalopen: false,
 };
 const GlobalStateSlice = createSlice({
   name: "globalState",
@@ -12,11 +13,18 @@ const GlobalStateSlice = createSlice({
     closeDropdown: (state) => {
       state.onOpenDropdown = false;
     },
+    closeModalDropdown: (state) => {
+      state.onModalopen = true;
+    },
+    openModalDropdown: (state) => {
+      state.onModalopen = false;
+    },
   },
 });
 export default GlobalStateSlice.reducer;
 export const { openDropdown, closeDropdown } = GlobalStateSlice.actions;
-const realState = (state) => state.GlobalState.onOpenDropdown;
+export const realState = (state) => state.GlobalState.onOpenDropdown;
+export const modalState = (state) => state.GlobalState.onModalopen;
 /// const state = ({GlobalState}) => GlobalState.openDropdown
 /**
  * 

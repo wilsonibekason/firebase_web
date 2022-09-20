@@ -8,6 +8,8 @@ import {
   BsCheck2Square,
   BsEmojiSmile,
   BsInfoLg,
+  BsFillChatDotsFill,
+  BsThreeDots,
 } from "react-icons/bs";
 import { MdOutlineCancel, MdModeEdit, MdContentCopy } from "react-icons/md";
 import { BiSquare, BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
@@ -63,6 +65,8 @@ export const IconProvider = ({ children }) => {
         MdContentCopy,
         FiUserPlus,
         AiFillCamera,
+        BsFillChatDotsFill,
+        BsThreeDots,
       }}
     >
       {children}

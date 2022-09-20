@@ -10,7 +10,7 @@ const AppCheck = () => {
         <p className={`${paragraph8} `}>
           this will take you to a new page{" "}
           <a
-            className={` text-blue-500 underline`}
+            className={` text-blue-500 underline cursor-pointer`}
             onClick={() => navigate("/appcheck", { replace: true })}
           >
             continue
