@@ -367,6 +367,14 @@ button, select, html, textarea, input {
   font-family: "HelveticaNeueBlack";
   src: url("../public/fonts/HelveticaNeue\ BlackCond.ttf");
 }
+@font-face {
+  font-family: "HelveticaNeueMed";
+  src: url("../public/fonts/HelveticaNeueMed.ttf");
+}
+@font-face {
+  font-family: "HelveticaNeueIt";
+  src: url("../public/fonts/HelveticaNeueIt.ttf");
+}
 .bg-header-color{
   --fire-color-primary-header-bg: linear-gradient(to bottom,#1a73e8 50%,#4285f4 100%);
 }

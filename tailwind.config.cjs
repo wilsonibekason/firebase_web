@@ -17,6 +17,8 @@ module.exports = {
         helvitica: ["HelveticaNeueHv", "sans-serif"],
         helviticaTin: ["HelveticaNeueTin", "sans-serif"],
         helveticaNeueBlack: ["HelveticaNeueBlack", "sans-serif"],
+        helveticaNeueMed: ["HelveticaNeueMed", "sans-serif"],
+        helveticaNeueIt: ["HelveticaNeueIt", "sans-serif"],
         robotoCondensed: ["RobotoCondensed", "sans-serif"],
       },
       fontSize: {

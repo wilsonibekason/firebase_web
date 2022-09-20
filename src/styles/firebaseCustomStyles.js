@@ -41,6 +41,8 @@ const styles = {
   flexCentered: "flex flex-start items-center justify-center",
   flexCentered2: "flex flex-start items-center",
   flexEnd: "flex justify-end items-center",
+  flexBetween: " flex flex-row justify-between ",
+  flexStart: "flex  items-start justify-start",
   transitions: "transition duration-500 ease-in-out",
   buttonStyle:
     "py-2 px-3 bg-blue-500  rounded-lg font-raleway font-medium text-gray-200 text-sm  hover:bg-blue-700 transition duration-300 ease-in-out",

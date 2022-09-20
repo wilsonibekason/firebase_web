@@ -11,8 +11,9 @@ import {
 } from "react-icons/bs";
 import { MdOutlineCancel, MdModeEdit, MdContentCopy } from "react-icons/md";
 import { BiSquare, BiUpArrowAlt, BiDownArrowAlt } from "react-icons/bi";
-import { FiCheckSquare, FiCopy } from "react-icons/fi";
+import { FiCheckSquare, FiCopy, FiUserPlus } from "react-icons/fi";
 import { FaGoogleDrive, FaKey } from "react-icons/fa";
+import { TbUserPlus } from "react-icons/tb";
 import { GrCheckmark } from "react-icons/gr";
 import { IoMdArrowForward } from "react-icons/io";
 import {
@@ -22,6 +23,7 @@ import {
   AiFillSetting,
   AiOutlineSearch,
   AiOutlineArrowRight,
+  AiFillCamera,
 } from "react-icons/ai";
 import { SiGooglechrome, SiGoogleassistant, SiSlack } from "react-icons/si";
 const IconsContext = createContext({});
@@ -59,6 +61,8 @@ export const IconProvider = ({ children }) => {
         AiOutlineArrowRight,
         FiCopy,
         MdContentCopy,
+        FiUserPlus,
+        AiFillCamera,
       }}
     >
       {children}
