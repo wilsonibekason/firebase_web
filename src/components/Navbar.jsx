@@ -1,31 +1,31 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { Dropdown } from "primereact/dropdown";
-import { Badge } from "primereact/badge";
+import { useDispatch, useSelector } from "react-redux";
 import { useGlobalContext } from "../services/OnGlobalContext";
-import { projects } from "../utils/data";
 import { ImBell } from "react-icons/im";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { UserModal } from "./modals";
-import { openDropdown } from "../redux/features/globalStateSlice/globalStateSlice";
+import {
+  modalState,
+  openDropdown,
+  openModalDropdown,
+} from "../redux/features/globalStateSlice/globalStateSlice";
+import { useIconContext } from "../services/OnIconContext";
+import styles from "../styles/firebaseCustomStyles";
 const Navbar = () => {
   const {
     GiHamburgerMenu,
-    selectedProject,
-    onProjectChange,
-    projectOptionTemplate,
-    groupedItemTemplate,
-    selectedProjectTemplate,
     setVisibleSidebar,
     AiOutlineArrowDown,
     visibleNav,
-    onModalClick,
     setModalClick,
-    setOnUserModal,
     onUserModal,
   } = useGlobalContext();
+  const { BsFillChatDotsFill } = useIconContext();
+  const { transitions } = styles;
   const dispatch = useDispatch();
   const openDropdownRef = () => dispatch(openDropdown());
+  const openModalDropdownRef = () => dispatch(openModalDropdown());
+  const chatModalState = useSelector(modalState);
   return (
     <>
       {!onUserModal && <UserModal />}
@@ -42,23 +42,6 @@ const Navbar = () => {
               onClick={() => setVisibleSidebar((prev) => !prev)}
             />
           </div>
-
-          {/* <div className="pr-0 md:pr-20 lg:scroll-pr-20 rounded-tl-xl">
-            <Dropdown
-              value={selectedProject}
-              options={projects}
-              onChange={onProjectChange}
-              valueTemplate={selectedProjectTemplate}
-              itemTemplate={projectOptionTemplate}
-              filter
-              optionLabel="name"
-              showClear
-              filterBy="name"
-              filterInputAutoFocus
-              placeholder="Select a project"
-              className="text-sm pr-20 font-robotoCondensed space-x-1 font-semibold capitalise"
-            />
-          </div> */}
           <div
             className="hidden items-center space-x-1  md:flex"
             onClick={() => setModalClick((prev) => !prev)}
@@ -82,17 +65,25 @@ const Navbar = () => {
           </h4>
 
           <div className="relative">
-            <ImBell className="font-bold text-2xl hover:text-black" />
+            <ImBell className={`text-2xl ${transitions} hover:text-gray-400`} />
             <div className="absolute inset-y-0 right-2 flex items-center pl-1.5 bg-red-500 w-2 h-2 rounded-full"></div>
           </div>
-          <div className="phone:block tablet:block laptop:hidden desktop:hidden Xdesktop:hidden">
-            <BsThreeDotsVertical className="text-2xl" />
-          </div>
           <div
-            // onClick={() => setOnUserModal((prev) => !prev)}
-            onClick={openDropdownRef}
-            className=""
+            className="phone:hidden  tablet:hidden laptop:block desktop:block Xdesktop:block"
+            onClick={openModalDropdownRef}
           >
+            <BsFillChatDotsFill
+              className={`text-2xl ${transitions} hover:text-gray-400 ${
+                chatModalState && "text-gray-400"
+              }`}
+            />
+          </div>
+          <div className="phone:block tablet:block laptop:hidden desktop:hidden Xdesktop:hidden">
+            <BsThreeDotsVertical
+              className={`text-2xl ${transitions} hover:text-gray-400`}
+            />
+          </div>
+          <div onClick={openDropdownRef} className="">
             <img
               src="https://lh3.googleusercontent.com/ogw/AOh-ky0Y0GWS8yodSDtiKJ6FOlNqNxLYt0B--1EThip08A=s32-c-mo"
               alt=""

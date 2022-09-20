@@ -7,22 +7,27 @@ const GlobalStateSlice = createSlice({
   name: "globalState",
   initialState,
   reducers: {
-    openDropdown: (state, action) => {
+    openDropdown: (state) => {
       state.onOpenDropdown = true;
     },
     closeDropdown: (state) => {
       state.onOpenDropdown = false;
     },
     closeModalDropdown: (state) => {
-      state.onModalopen = true;
+      state.onModalopen = false;
     },
     openModalDropdown: (state) => {
-      state.onModalopen = false;
+      state.onModalopen = true;
     },
   },
 });
 export default GlobalStateSlice.reducer;
-export const { openDropdown, closeDropdown } = GlobalStateSlice.actions;
+export const {
+  openDropdown,
+  closeDropdown,
+  openModalDropdown,
+  closeModalDropdown,
+} = GlobalStateSlice.actions;
 export const realState = (state) => state.GlobalState.onOpenDropdown;
 export const modalState = (state) => state.GlobalState.onModalopen;
 /// const state = ({GlobalState}) => GlobalState.openDropdown

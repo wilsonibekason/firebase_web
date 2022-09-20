@@ -26,6 +26,8 @@ import {
   AiOutlineSearch,
   AiOutlineArrowRight,
   AiFillCamera,
+  AiFillEdit,
+  AiOutlineClose,
 } from "react-icons/ai";
 import { SiGooglechrome, SiGoogleassistant, SiSlack } from "react-icons/si";
 const IconsContext = createContext({});
@@ -67,6 +69,8 @@ export const IconProvider = ({ children }) => {
         AiFillCamera,
         BsFillChatDotsFill,
         BsThreeDots,
+        AiFillEdit,
+        AiOutlineClose,
       }}
     >
       {children}
