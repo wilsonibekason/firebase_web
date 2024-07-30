@@ -101,7 +101,7 @@ const DesktopSidebar = () => {
             className={`flex items-center space-x-2 hover:bg-gray-900 focus:bg-gray-900 active:bg-gray-900 py-4 pl-5`}
           >
             <FaHome className="sidetext-color " size={20} />
-            <h4 className="sidetext-color font-raleway font-medium  text-sm pr-6">
+            <h4 className="sidetext-color font-raleway font-medium whitespace-nowrap text-sm pr-6">
               project overview
             </h4>
             <div className="h-6 border-x-[1px] border-gray-800 " />
@@ -117,7 +117,7 @@ const DesktopSidebar = () => {
               // onClick={() => setOnSettingModal((prev) => !prev)}
             />
             <BiRightArrow
-              className="text-white hidden group-hover:block invert-0 transition ease-in duration-300"
+              className="text-white invisible group-hover:visible invert-0 transition ease-in duration-300"
               size={10}
             />
           </div>
@@ -127,7 +127,7 @@ const DesktopSidebar = () => {
         {/* project shortcuts sections */}
         <div className={`py-4 ${open ? "block " : "hidden "}`}>
           <h4 className="font-raleway font-medium text-xss text-gray-400  capitalize ml-4 mb-4">
-            project section
+            project section 
           </h4>
           <div className="mr-1.5 ml-2.5 space-y-2">
             <div className="group">

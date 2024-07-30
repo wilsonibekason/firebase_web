@@ -63,7 +63,7 @@ const Overview = () => {
             onClick={() => setOpen(!open)}
           />
           {/* gap-x-4 */}
-          <div className="flex gap-x-4 items-center px-5 py-2">
+          <div className="flex gap-x-4 items-center px-5 py-2 cursor-pointer">
             <img
               // src="./src/assets/logo.png"
               onClick={() => navigate("/", { replace: true })}
@@ -96,26 +96,25 @@ const Overview = () => {
               }`}
             >
               <div
-                className={`flex items-center space-x-2 hover:bg-gray-900 focus:bg-gray-900 active:bg-gray-900 py-4 pl-5`}
+                className={`flex items-center space-x-2 hover:bg-gray-900 focus:bg-gray-900 active:bg-gray-900 py-4 pl-5 cursor-pointer`}
               >
                 <FaHome className="sidetext-color " size={20} />
-                <h4 className="sidetext-color font-raleway font-medium  text-sm pr-6">
+                <h4 className="sidetext-color whitespace-nowrap font-raleway font-medium  text-sm pr-6">
                   project overview
                 </h4>
-                <div className="h-6 border-x-[1px] border-gray-800 " />
+                <div className="h-6 border-x-[1px] border-gray-800 invisible" />
               </div>
 
               <div
-                className={`flex items-center group mr-5`}
+                className="flex items-center group mr-5 cursor-pointer"
                 onClick={() => setOnSettingModal((prev) => !prev)}
               >
                 <AiOutlineSetting
                   size={20}
-                  className="text-white"
-                  // onClick={() => setOnSettingModal((prev) => !prev)}
+                  className="text-white transition-transform duration-300 ease-in-out group-hover:rotate-45"
                 />
                 <BiRightArrow
-                  className="text-white hidden group-hover:block invert-0 transition ease-in duration-300"
+                  className="text-white invisible group-hover:visible group-hover:translate-x-1 transition-transform duration-300 ease-in-out"
                   size={10}
                 />
               </div>
@@ -128,7 +127,7 @@ const Overview = () => {
                 project section
               </h4>
               <div className="mr-1.5 ml-2.5 space-y-2">
-                <div className="group">
+                <div className="group cursor-pointer">
                   <div
                     className="flex items-center justify-between group-hover:bg-gray-900 
                   transition-all duration-700 ease-linear delay-75 py-2.5 rounded-lg
@@ -152,7 +151,7 @@ const Overview = () => {
                   </div>
                 </div>
                 {/* sections 2 */}
-                <div className="group ">
+                <div className="group cursor-pointer ">
                   <div
                     className="flex items-center justify-between  group-hover:bg-gray-900 
               transition-all duration-700 ease-linear delay-75 py-2.5 rounded-lg
@@ -187,7 +186,7 @@ const Overview = () => {
               {/* contanier trigger */}
               {/* <DropdownContainer /> */}
               <div
-                className="px-4 bg-gray-900 flex justify-between rounded-t-lg py-3 focus:bg-gray-700 hover:bg-gray-700"
+                className="px-4 bg-gray-900 flex justify-between rounded-t-lg py-3 focus:bg-gray-700 hover:bg-gray-700 cursor-pointer"
                 onClick={() => setDropdown((prev) => !prev)}
               >
                 <div>
@@ -205,17 +204,17 @@ const Overview = () => {
                   dropdown ? "block " : "hidden"
                 }`}
               >
-                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg cursor-pointer">
                   <div>
                     <GiWorld />
                   </div>
                   <div>
-                    <h5 className={`${styles.paragraph} text-white`}>
+                    <h5 className={`${styles.paragraph} text-white `}>
                       Hosting{" "}
                     </h5>
                   </div>
                 </div>
-                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg cursor-pointer">
                   <div>
                     <GiWorld />
                   </div>
@@ -231,7 +230,7 @@ const Overview = () => {
               <div className="w-full  border-[0.0003px] border-gray-500" />
               {/* contanier trigger */}
               <div
-                className="px-4 bg-gray-900 flex justify-between py-3 focus:bg-gray-700 hover:bg-gray-700"
+                className="px-4 bg-gray-900 flex justify-between py-3 focus:bg-gray-700 hover:bg-gray-700 cursor-pointer"
                 onClick={() => setReleaseDropdown((prev) => !prev)}
               >
                 <div>
@@ -255,7 +254,7 @@ const Overview = () => {
                   releaseDropdown ? "block " : "hidden"
                 }`}
               >
-                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg cursor-pointer">
                   <div>
                     <GiWorld />
                   </div>
@@ -265,7 +264,7 @@ const Overview = () => {
                     </h5>
                   </div>
                 </div>
-                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg cursor-pointer">
                   <div>
                     <GiWorld />
                   </div>
@@ -284,7 +283,7 @@ const Overview = () => {
               <div
                 className={`px-4 bg-gray-900 flex justify-between ${
                   !buildDropdown ? "rounded-b-lg" : ""
-                }  py-3 focus:bg-gray-700 hover:bg-gray-700 `}
+                }  py-3 focus:bg-gray-700 hover:bg-gray-700 cursor-pointer`}
                 onClick={() => setBuildDropdown((prev) => !prev)}
               >
                 <div>
@@ -308,7 +307,7 @@ const Overview = () => {
                   buildDropdown ? "block " : "hidden"
                 }`}
               >
-                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg cursor-pointer">
                   <div>
                     <GiWorld />
                   </div>
@@ -318,7 +317,7 @@ const Overview = () => {
                     </h5>
                   </div>
                 </div>
-                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg">
+                <div className="flex flex-row gap-x-4 items-center hover:bg-gray-700  px-4 py-2 rounded-lg cursor-pointer">
                   <div>
                     <GiWorld />
                   </div>
@@ -335,7 +334,7 @@ const Overview = () => {
             {/* products categories section */}
             {/* endo of product section */}
             <div className={` group ${open ? "block " : "hidden"}`}>
-              <div className="flex gap-x-4 items-center group-hover:bg-gray-900 pl-4 py-4">
+              <div className="flex gap-x-4 items-center group-hover:bg-gray-900 pl-4 py-4 cursor-pointer">
                 <FaCubes />
                 <h4 className="font-raleway font-semibold text-xss text-gray-400 capitalize">
                   All products
@@ -360,10 +359,10 @@ const Overview = () => {
                 </p>
               </div>
               <div className="flex flex-start items-center space-x-4">
-                <h4 className="font-raleway font-semibold text-sm text-blue-300 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100  ">
+                <h4 className="font-raleway font-semibold text-sm text-blue-300 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100 whitespace-nowrap cursor-pointer">
                   Learn more
                 </h4>
-                <h4 className="font-raleway font-semibold text-sm text-blue-300 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100 ">
+                <h4 className="font-raleway font-semibold text-sm text-blue-300 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100  whitespace-nowrap cursor-pointer">
                   Got it
                 </h4>
               </div>
@@ -440,7 +439,7 @@ const Overview = () => {
               </p>
             </div>
             <div>
-              <p className="font-raleway font-semibold text-sm text-gray-400 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100">
+              <p className="font-raleway font-semibold text-sm text-gray-400 py-2 px-3 rounded-lg hover:bg-gray-700 active:bg-gray-700 transition duration-100 cursor-pointer">
                 upgrade
               </p>
             </div>
@@ -484,32 +483,6 @@ const Overview = () => {
               open ? "desktop:left-96" : "desktop:left-40"desktop:absolute
             }  */}
             </div>
-            {/* <div
-            className={` flex flex-start flex-col  transition duration-100 pt-5 phone:px-4 desktop:px-20 Xdesktop:px-20 tablet:px-10`}
-          >
-            <div className="flex flex-row items-center gap-4">
-              <h1 className="font-raleway font-semibold text-3xl header-text">
-                linkedin_app
-              </h1>
-              <span className=" font-raleway font-semibold border border-solid border-gray-300 w-24 h-5 py-2.5 rounded-xl flex justify-center items-center text-xss bg-blue-700 capitalize text-white shadow hover:bg-blue-300 transition ease-in duration-150 focus:bg-blue-300">
-                spark plan
-              </span>
-            </div>
-            <div className="flex flex-1 flex-row items-center mt-3 gap-4">
-              <span className="flex w-36 h-5 py-4 pr-2 rounded-2xl items-center gap-1  text-white font-raleway font-semibold text-sm bg-blue-700 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900">
-                <div className="flex justify-center items-center bg-purple-600  rounded-full p-1.5 ">
-                  <AiOutlinePlus className="text-white text-lg font-bold" />
-                </div>
-                linkedIn rebuilt
-              </span>
-              <span className="flex w-28 h-5 py-4 rounded-2xl items-center text-white font-robotoCondensed font-normal text-sm bg-blue-700 capitalize px-4 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900">
-                <div className="">
-                  <AiOutlinePlus className="text-white text-xl font-black " />
-                </div>
-                Add app
-              </span>
-            </div>
-          </div> */}
             <FeatureHeader />
             <img
               src="	https://www.gstatic.com/mobilesdk/190805_mobilesdk/illustration-b-waiting@2x.png"

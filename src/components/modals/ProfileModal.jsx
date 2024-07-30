@@ -8,6 +8,7 @@ import {
 import styles from "../../styles/firebaseCustomStyles";
 import { useIconContext } from "../../services/OnIconContext";
 import { profile } from "../../assets";
+import { wilsonImg } from "../../assets/images";
 const ProfileModal = () => {
   const dispatch = useDispatch();
   const dropdownState = useSelector(
@@ -56,7 +57,7 @@ const ProfileModal = () => {
                   leaveTo="opacity-0 scale-95"
                 >
                   <Dialog.Panel
-                    className={`w-1/4 min-h-[30rem] overflow-y-auto scrollbar-thumb-slate-400 scrollbar-thin scrollbar-thumb-rounded-lg my-20 ml-[50rem] bg-white py-4    transition-all rounded-lg`}
+                    className={`w-1/4 min-h-[30rem] overflow-y-auto scrollbar-thumb-slate-400 scrollbar-thin scrollbar-thumb-rounded-lg my-7 ml-[65rem] bg-white py-4    transition-all rounded-lg`}
                   >
                     <div className={`${flexCol7}`}>
                       {/* first container content */}
@@ -66,18 +67,15 @@ const ProfileModal = () => {
                             className={`border border-solid border-gray-500 p-3 rounded-full relative`}
                           >
                             <img
-                              // src={profile}
-                              src={
-                                "https://lh3.googleusercontent.com/ogw/AOh-ky0Y0GWS8yodSDtiKJ6FOlNqNxLYt0B--1EThip08A=s32-c-mo"
-                              }
+                              src={wilsonImg}
                               alt=""
-                              className="w-16 h-16 object-cover cursor-pointer"
+                              className="w-16 h-16 object-cover rounded-full cursor-pointer"
                             />
                             <div
                               className={`absolute right-0 bottom-1 p-1 bg-white shadow-lg rounded-full`}
                             >
                               <AiFillCamera
-                                className={`text-black `}
+                                className={`text-black cursor-pointer hover:opacity-50 transition duration-150 `}
                                 size={20}
                               />
                             </div>

@@ -46,7 +46,7 @@ const Navbar = () => {
             className="hidden items-center space-x-1  md:flex"
             onClick={() => setModalClick((prev) => !prev)}
           >
-            <h6 className="font-raleway font-normal text-sm text-gray-200 ">
+            <h6 className="font-raleway cursor-pointer font-normal text-sm text-gray-200 ">
               linkedIn-app
             </h6>
             <AiOutlineArrowDown
@@ -66,19 +66,19 @@ const Navbar = () => {
 
           <div className="relative">
             <ImBell className={`text-2xl ${transitions} hover:text-gray-400`} />
-            <div className="absolute inset-y-0 right-2 flex items-center pl-1.5 bg-red-500 w-2 h-2 rounded-full"></div>
+            <div className="absolute inset-y-0 right-2 flex items-center pl-1.5 bg-red-500 w-2 h-2 rounded-full cursor-pointer"></div>
           </div>
           <div
-            className="phone:hidden  tablet:hidden laptop:block desktop:block Xdesktop:block"
+            className="phone:hidden  tablet:hidden laptop:block desktop:block Xdesktop:block cursor-pointer"
             onClick={openModalDropdownRef}
           >
             <BsFillChatDotsFill
-              className={`text-2xl ${transitions} hover:text-gray-400 ${
-                chatModalState && "text-gray-400"
+              className={`text-2xl  cursor-pointe ${transitions} hover:text-gray-400 ${
+                chatModalState && "text-gray-400r"
               }`}
             />
           </div>
-          <div className="phone:block tablet:block laptop:hidden desktop:hidden Xdesktop:hidden">
+          <div className="phone:block tablet:block laptop:hidden desktop:hidden Xdesktop:hidden cursor-pointer">
             <BsThreeDotsVertical
               className={`text-2xl ${transitions} hover:text-gray-400`}
             />
@@ -87,7 +87,7 @@ const Navbar = () => {
             <img
               src="https://lh3.googleusercontent.com/ogw/AOh-ky0Y0GWS8yodSDtiKJ6FOlNqNxLYt0B--1EThip08A=s32-c-mo"
               alt=""
-              className="phone:w-6 phone:h-6  tablet:w-6 tablet:h-6 desktop:w-8 desktop:h-8 Xdesktop:w-[34px] Xdesktop:h-[34px] rounded-full p-1 hover:shadow"
+              className="phone:w-6 phone:h-6  tablet:w-6 tablet:h-6 desktop:w-8 desktop:h-8 Xdesktop:w-[34px] Xdesktop:h-[34px] rounded-full p-1 hover:shadow cursor-pointer"
             />
           </div>
         </div>

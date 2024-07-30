@@ -1,26 +1,29 @@
-import React from "react";
-import { useGlobalContext } from "../../services/OnGlobalContext";
-import { useIconContext } from "../../services/OnIconContext";
+import React, { useState } from "react";
 
-const Tooltip = ({ name, customStyles, hoverType }) => {
-  const {
-    OnTooltipHover,
-    andriodHover,
-    appleHover,
-    flutterHover,
-    toogleSlide,
-    unityHover,
-    webHover,
-  } = useGlobalContext();
-  const { BsApple } = useIconContext();
+const Tooltip = ({ texts, children }) => {
+  const [visible, setVisible] = useState(false);
+
+  const showTooltip = () => {
+    setVisible(true);
+  };
+
+  const hideTooltip = () => {
+    setVisible(false);
+  };
+
   return (
-    <p
-      className={` ${
-        hoverType ? "hidden" : "block"
-      } hidden absolute -ml-2 py-px px-2.5 bg-gray-700 text-gray-200 text-[9px] rounded-md ${customStyles}`}
+    <div
+      className="relative inline-block"
+      onMouseEnter={showTooltip}
+      onMouseLeave={hideTooltip}
     >
-      {name}
-    </p>
+      {children}
+      {visible && (
+        <div className="absolute top-full left-1/2 transform -translate-x-1/2 px-3 py-1 bg-slate-800 text-white text-xs rounded whitespace-nowrap mt-4 flex flex-col items-start">
+          {texts && texts.map((text, index) => <div key={index}>{text}</div>)}
+        </div>
+      )}
+    </div>
   );
 };
 

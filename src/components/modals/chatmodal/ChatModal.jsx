@@ -55,7 +55,7 @@ const ChatModal = () => {
                   leaveTo="opacity-0 scale-95"
                 >
                   <Dialog.Panel
-                    className={`w-[28%]  min-h-[50rem] overflow-y-auto scrollbar-thumb-slate-400 scrollbar-thin scrollbar-thumb-rounded-lg my-20 ml-[60rem] bg-white shadow-2xl  py-8 px-4  transition-all rounded-lg`}
+                    className={`w-[28%]  min-h-[45rem] overflow-y-auto scrollbar-thumb-slate-400 scrollbar-thin scrollbar-thumb-rounded-lg my-10 ml-[60rem] bg-white shadow-2xl  py-8 px-4  transition-all rounded-lg`}
                   >
                     <div className={``}>
                       <div className={`${flexCol7} space-y-8`}>
@@ -123,10 +123,11 @@ const ChatModal = () => {
                         <div
                           className={`${flexCol7} space-y-3 min-h-[100px] h-[220px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-md scrollbar-thumb-gray-600`}
                         >
-                          <ChatHomeMenu />
-                          <ChatHomeMenu />
-                          <ChatHomeMenu />
-                          <ChatHomeMenu />
+                          {Array(10)
+                            .fill("")
+                            .map((_) => (
+                              <ChatHomeMenu key={_ + "dd"} />
+                            ))}
                         </div>
                       </div>
                     </div>
