@@ -1,6 +1,7 @@
 import React from "react";
 import { useIconContext } from "../../services/OnIconContext";
 import styles from "../../styles/firebaseCustomStyles";
+import Tooltip from "../overview/TooltipElement";
 
 const ProjectDetails = () => {
   const {
@@ -20,13 +21,21 @@ const ProjectDetails = () => {
           <div className={`${paragraph6}`}>Project name</div>
           <div className={`${flexCentered} space-x-1`}>
             <p className={`${paragraph5} `}>linkedin_app</p>
-            <MdModeEdit className={`${iconColor} flex-start`} size={20} />
+            <MdModeEdit
+              className={`${iconColor} flex-start cursor-pointer`}
+              size={20}
+            />
           </div>
         </div>
         <div className={`${flexRow}`}>
           <div className={`${flexCentered} space-x-2 `}>
             <p className={`${paragraph6}`}>Project id</p>
-            <AiOutlineQuestionCircle className={`${iconColor}`} size={16} />
+            <Tooltip texts={["your project id"]}>
+              <AiOutlineQuestionCircle
+                className={`${iconColor} cursor-pointer`}
+                size={16}
+              />
+            </Tooltip>
           </div>
           <div>
             <p className={`${paragraph5} flex-start`}>linkedin-app-d5d09</p>

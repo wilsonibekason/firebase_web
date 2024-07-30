@@ -65,7 +65,9 @@ const Navbar = () => {
           </h4>
 
           <div className="relative">
-            <ImBell className={`text-2xl ${transitions} hover:text-gray-400`} />
+            <ImBell
+              className={`text-2xl ${transitions} hover:text-gray-400 cursor-pointer`}
+            />
             <div className="absolute inset-y-0 right-2 flex items-center pl-1.5 bg-red-500 w-2 h-2 rounded-full cursor-pointer"></div>
           </div>
           <div
@@ -73,8 +75,8 @@ const Navbar = () => {
             onClick={openModalDropdownRef}
           >
             <BsFillChatDotsFill
-              className={`text-2xl  cursor-pointe ${transitions} hover:text-gray-400 ${
-                chatModalState && "text-gray-400r"
+              className={`text-2xl  cursor-pointer ${transitions} hover:text-gray-400 ${
+                chatModalState && "text-gray-400"
               }`}
             />
           </div>

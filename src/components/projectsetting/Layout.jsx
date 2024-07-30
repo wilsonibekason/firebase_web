@@ -1,17 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineQuestion } from "react-icons/ai";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, useLocation } from "react-router-dom";
 import { useGlobalContext } from "../../services/OnGlobalContext";
 import styles from "../../styles/firebaseCustomStyles";
 import { tabElements } from "../../utils/data";
 import DesktopSidebar from "../DesktopSidebar";
 import Navbar from "../Navbar";
 import TabletSidebar from "../TabletSidebar";
+import Tooltip from "../overview/TooltipElement";
+import { useStore } from "../../redux/app/zodStore";
 
 const Layout = ({ children }) => {
   const { AiOutlineArrowRight, AiOutlineArrowLeft } = useGlobalContext();
-  const navigate = useNavigate();
   const { header } = styles;
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const { activeTabId, setActiveTabId, setLastEndpoint, lastEndpoint } =
+    useStore((state) => ({
+      activeTabId: state.activeTabId,
+      setActiveTabId: state.setActiveTabId,
+      setLastEndpoint: state.setLastEndpoint,
+      lastEndpoint: state.lastEndpoint,
+    }));
+  const toogleNav = (link, id) => {
+    navigate(`/settings/general/${link}`, {
+      replace: true,
+    });
+    setActiveTabId(id);
+  };
+  useEffect(() => {
+    const pathSegments = location.pathname.split("/").filter(Boolean);
+    const last = pathSegments[pathSegments.length - 1];
+    setLastEndpoint(last);
+  }, [location.pathname, setLastEndpoint]);
+
+  console.log("endpoint", lastEndpoint);
+
   return (
     <>
       <div className="flex">
@@ -31,7 +56,9 @@ const Layout = ({ children }) => {
               <div className="flex flex-row justify-between mb-3">
                 <h4 className={`${header} capitalize`}>project settings</h4>
                 <div className="py-[2px] px-[10px] rounded-full justify-center items-center flex bg-gray-600">
-                  <AiOutlineQuestion size={14} />
+                  <Tooltip texts={["Question", ""]}>
+                    <AiOutlineQuestion size={14} className="cursor-pointer" />
+                  </Tooltip>
                 </div>
               </div>
               {/* tablte scrollbar */}
@@ -49,17 +76,18 @@ const Layout = ({ children }) => {
                   {tabElements.map((item, index) => {
                     const { id, link, name, customStyles } = item;
                     return (
-                      <li
-                        key={id}
-                        className={`${customStyles} `}
-                        //   onClick={() => navigate(`${link}`, { replace: true })}
-                      >
-                        <NavLink
-                          className=" text-gray-700 inline-block py-2 px-4 rounded-t-sm border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 capitalize font-raleway font-semibold hover:bg-gray-300"
+                      <li key={id} className={`${customStyles} cursor-pointer`}>
+                        <div
+                          className={`text-gray-700 inline-block py-2 px-4 rounded-t-sm border-b-2  capitalize ${
+                            activeTabId === id && lastEndpoint === link
+                              ? "border-gray-600 text-gray-600 font-raleway font-semibold bg-gray-300"
+                              : "border-transparent"
+                          } `}
                           to={link}
+                          onClick={() => toogleNav(link, id)}
                         >
                           {name}
-                        </NavLink>
+                        </div>
                       </li>
                     );
                   })}

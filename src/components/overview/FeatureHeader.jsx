@@ -6,6 +6,8 @@ import ProjectModalView from "./ProjectModalView";
 import SettingModal from "./SettingModal";
 import { ChatModal, ProfileModal, UserModal } from "../modals";
 import Tooltip from "./TooltipElement";
+import { useStore } from "../../redux/app/zodStore";
+// import { useStore } from "zustand";
 
 const FeatureHeader = () => {
   const {
@@ -23,6 +25,8 @@ const FeatureHeader = () => {
     onSettingModal,
   } = useGlobalContext();
   const navigate = useNavigate();
+  const count = useStore((state) => state.count);
+  const increase = useStore((state) => state.increase);
 
   return (
     <>
@@ -30,6 +34,9 @@ const FeatureHeader = () => {
       {onSettingModal && <SettingModal />}
       <ProfileModal />
       <ChatModal />
+      {/* <h1>{count}</h1>
+      <button onClick={increase}>Increase</button> */}
+
       <div
         className={`relative flex flex-start flex-col transition duration-100 pt-5 phone:px-4 desktop:px-20 Xdesktop:px-20 tablet:px-10`}
       >
@@ -42,60 +49,65 @@ const FeatureHeader = () => {
           </span>
         </div>
         {/* Container for both toggle states */}
-        <div className="relative w-full">
+        <div className="relative w-full py-10">
           {/* Slide-in and slide-out flex for options application click */}
           <div
-            className={`absolute top-0 left-0 w-full transform transition-transform duration-700 pt-2 ${
+            className={`absolute top-0 left-0 w-full transform transition-transform duration-300 pt-3 ${
               toogleState
                 ? "translate-x-0 opacity-100"
-                : "translate-x-[-30px] opacity-0"
+                : "translate-x-[-100px] opacity-0"
             } flex flex-1 flex-row items-center mt-3 space-x-2`}
           >
-            <div
-              className="p-2 flex items-center justify-center rounded-full bg-blue-800 text-white hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900 cursor-pointer"
-              onClick={() => setToogleState((prev) => !prev)}
-            >
-              <Tooltip texts={["cancel"]}>
+            <Tooltip texts={["cancel"]}>
+              <div
+                className="p-2 flex items-center justify-center rounded-full bg-blue-800 text-white hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900 cursor-pointer"
+                onClick={() => setToogleState((prev) => !prev)}
+              >
                 <ImCancelCircle size={20} />
+              </div>
+            </Tooltip>
+
+            <div className={`${styles.flexCol} cursor-pointer`}>
+              <Tooltip texts={["apple"]}>
+                <div
+                  className={`${styles.iconBox}`}
+                  onClick={() => appleHovered}
+                >
+                  <IoIosAppstore size={20} />
+                </div>
               </Tooltip>
             </div>
             <div className={`${styles.flexCol} cursor-pointer`}>
-              <div className={`${styles.iconBox}`} onClick={() => appleHovered}>
-                <Tooltip texts={["apple"]}>
-                  <IoIosAppstore size={20} />
-                </Tooltip>
-              </div>
-            </div>
-            <div className={`${styles.flexCol} cursor-pointer`}>
-              <div className={`${styles.iconBox}`}>
-                <Tooltip texts={["robot"]}>
+              <Tooltip texts={["robot"]}>
+                <div className={`${styles.iconBox}`}>
                   <FaRobot size={20} />
-                </Tooltip>
-              </div>
+                </div>
+              </Tooltip>
             </div>
             <div
               className={`${styles.flexCol} cursor-pointer`}
               onClick={() => navigate("/web", { replace: true })}
             >
-              <div className={`${styles.iconBox}`}>
-                <Tooltip texts={["web"]}>
+              <Tooltip texts={["web"]}>
+                <div className={`${styles.iconBox}`}>
                   <BiCodeAlt size={20} />
-                </Tooltip>
-              </div>
-            </div>
-            <div
-              className={`${styles.iconBox2} flex flex-col space-y-2 cursor-pointer`}
-            >
-              <Tooltip texts={["codesandbox"]}>
-                <AiOutlineCodeSandbox size={20} />
+                </div>
               </Tooltip>
             </div>
-            <div className={`${styles.flexCol} cursor-pointer`}>
-              <div className={`${styles.iconBox2}`}>
-                <Tooltip texts={["flutter"]}>
-                  <RiFlutterFill size={20} />
-                </Tooltip>
+            <Tooltip texts={["codesandbox"]}>
+              <div
+                className={`${styles.iconBox2} flex flex-col space-y-2 cursor-pointer`}
+              >
+                <AiOutlineCodeSandbox size={20} />
               </div>
+            </Tooltip>
+
+            <div className={`${styles.flexCol} cursor-pointer`}>
+              <Tooltip texts={["flutter"]}>
+                <div className={`${styles.iconBox2}`}>
+                  <RiFlutterFill size={20} />
+                </div>
+              </Tooltip>
             </div>
             <div className={`${styles.flexCol}`}>
               <h5 className={`${styles.paragraph2}`}>select a platform</h5>
@@ -103,10 +115,10 @@ const FeatureHeader = () => {
           </div>
           {/* Slide-in and slide-out flex for app click */}
           <div
-            className={`absolute top-0 left-0 w-full transform transition-transform duration-700 ${
+            className={`absolute top-0 left-0 w-full transform transition-transform duration-300 ${
               !toogleState
                 ? "translate-x-0 opacity-100"
-                : "translate-x-[-30px] opacity-0"
+                : "translate-x-[-100px] opacity-0"
             } flex flex-1 flex-row items-center mt-3 gap-4`}
           >
             <span className="flex w-36 h-5 py-4 pr-2 rounded-2xl items-center gap-1 text-white font-raleway font-semibold text-sm bg-blue-700 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900 cursor-pointer">
@@ -115,15 +127,17 @@ const FeatureHeader = () => {
               </div>
               linkedIn rebuilt
             </span>
-            <span
-              className="flex w-28 h-5 py-4 rounded-2xl items-center text-white font-robotoCondensed font-normal text-sm bg-blue-700 capitalize px-4 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900 cursor-pointer"
-              onClick={() => setToogleState((prev) => !prev)}
-            >
-              <div>
-                <AiOutlinePlus className="text-white text-xl font-black " />
-              </div>
-              Add app
-            </span>
+            <Tooltip texts={["Add App"]}>
+              <span
+                className="flex w-28 h-5 py-4 rounded-2xl items-center text-white font-robotoCondensed font-normal text-sm bg-blue-700 capitalize px-4 hover:bg-blue-900 transition ease-in duration-150 focus:bg-blue-900 cursor-pointer"
+                onClick={() => setToogleState((prev) => !prev)}
+              >
+                <div>
+                  <AiOutlinePlus className="text-white text-xl font-black " />
+                </div>
+                Add app
+              </span>
+            </Tooltip>
           </div>
         </div>
       </div>

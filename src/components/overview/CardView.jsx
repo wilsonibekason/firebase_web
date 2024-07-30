@@ -12,7 +12,7 @@ const CardView = () => {
           Store and sync app data in milliseconds
         </div>
         {/* desktop:overflow-hidden Xdesktop:overflow-hidden */}
-        <ImCancelCircle className="text-2xl font-bold text-gray-600" />
+        <ImCancelCircle className="text-2xl font-bold text-gray-600 cursor-pointer" />
       </div>
       <div className="overflow-visible overflow-x-auto scrollbar-thin flex flex-row basis-full gap-8 mt-6 mx-2 md:mx-0">
         <div className="flex flex-grow flex-auto w-[30%] gap-4">

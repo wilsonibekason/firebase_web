@@ -52,14 +52,14 @@ const AdminSDK = () => {
       <div className={`px-8`}>
         <div className={` ${flexRow2} space-x-4`}>
           {highlightData.map((item, index) => (
-            <div class="flex items-center mb-4 space-x-2 " key={index}>
+            <div className="flex items-center mb-4 space-x-2 " key={index}>
               <input
                 type="radio"
                 value="code"
                 className="w-6 h-6 text-blue-600 focus:ring-blue-500 rounded-full focus:ring-1 "
               />
               <label
-                for="default-radio-1"
+                htmlFor="default-radio-1"
                 className={`${paragraph11} font-helviticaTin capitalize tracking-normal `}
               >
                 {item.name}
@@ -70,7 +70,7 @@ const AdminSDK = () => {
         <SyntaxHighlighter
           language="javascript"
           style={gruvboxLight}
-          className=" scrollbar-thin scrollbar-thumb-gray-500 "
+          className="scrollbar-thin scrollbar-thumb-gray-500 "
         >
           {` 
            var admin = require("firebase-admin");

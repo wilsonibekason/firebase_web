@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { Sidebar } from "primereact/sidebar";
-import { AiOutlinePlus } from "react-icons/ai";
-import {} from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "./../components";
 import { useGlobalContext } from "./../services/OnGlobalContext";
@@ -15,14 +12,10 @@ import {
 } from "./../components/overview";
 import { firebaseLogo } from "./../assets";
 import styles from "../styles/firebaseCustomStyles";
-import SettingModal from "./../components/overview/SettingModal";
+
 const Overview = () => {
   const navigate = useNavigate();
   const {
-    GiHamburgerMenu,
-    setVisibleSidebar,
-    visibleSidebar,
-    toogleSidebar,
     FaHome,
     FcSettings,
     BiRightArrow,
@@ -52,9 +45,12 @@ const Overview = () => {
     <>
       <div className="flex ">
         <div
-          className={` ${
-            open ? "w-64 duration-300 " : "w-16 duration-1000 delay-500"
-          } hidden md:hidden lg:block bg-[#00001a] h-auto transition-all ease-linear   pt-1 relative  `}
+          // className={` ${
+          //   open ? "w-64 duration-300 " : "w-16 duration-1000 delay-500"
+          // } hidden md:hidden lg:block bg-[#00001a] h-auto transition-all ease-linear pt-1 relative`}
+          className={`fixed top-0 left-0 h-full ${
+            open ? "w-64 duration-300" : "w-16 duration-1000 delay-500"
+          } bg-[#00001a] transition-all ease-linear pt-1`}
         >
           <img
             src="./src/assets/control.png"
@@ -374,11 +370,6 @@ const Overview = () => {
               >
                 <FaHome size={20} />
               </li>
-              {/* <li
-                className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center ${styles.ulbg} `}
-              >
-                <AiOutlineSetting size={20} />
-              </li> */}
               <div
                 className={`flex items-center group    rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm  `}
                 onClick={() => setOnSettingModal((prev) => !prev)}
@@ -458,30 +449,22 @@ const Overview = () => {
               className="text-gray-800 hover:text-white transition ease-in duration-100"
               onClick={() => setOpen((prev) => !prev)}
             />
-
-            {/* <AiOutlineArrowLeft
-            size={20}
-            className="text-gray-800 hover:text-white transition ease-in duration-100"
-            onClick={() => setOpen((prev) => !prev)}
-          /> */}
           </div>
-          {/* close arrow div */}
-          {/*  */}
         </div>
-
         {/* tablet sidebar  */}
         <div className="block desktop:hidden target:block  Xdesktop:hidden">
           <TabletSidebar />
         </div>
         {/*   */}
-        <div className="min-h-[30vh] flex-1">
-          <div className=" header-bg min-h-[50vh] p-3   ">
+        <div
+          className={`flex-1 min-h-[30vh] ${
+            open ? "ml-64" : "ml-16 duration-1000 delay-500"
+          } transition-margin ease-linear duration-300`}
+        >
+          <div className=" header-bg min-h-[50vh] p-3">
             {/* header */}
             <div className="">
               <Navbar />
-              {/* ${
-              open ? "desktop:left-96" : "desktop:left-40"desktop:absolute
-            }  */}
             </div>
             <FeatureHeader />
             <img

@@ -11,7 +11,9 @@ const SettingModal = () => {
           <div className="space-y-4">
             <p
               className={`${styles.paragraph4} text-gray-700 cursor-pointer transition-transform transform hover:scale-105 hover:text-blue-500`}
-              onClick={() => navigate("/settings/general", { replace: true })}
+              onClick={() =>
+                navigate("/settings/general/general", { replace: true })
+              }
             >
               Project Setting
             </p>

@@ -9,14 +9,14 @@ const FirebaseCard = () => {
       <CardView />
       <CardView />
       <div
-        className="flex flex-row justify-between  pt-10
+        className="flex flex-row justify-between pt-10
       "
       >
         <div className="font-raleway font-semibold text-gray-600 text-xl">
           Deploy extended functionality to your app quickly{" "}
         </div>
         {/* desktop:overflow-hidden Xdesktop:overflow-hidden */}
-        <ImCancelCircle className="text-2xl font-bold text-gray-600" />
+        <ImCancelCircle className="text-2xl font-bold text-gray-600 cursor-pointer" />
       </div>
       <div className="w-full h-auto flex flex-col mt-4 ">
         <img

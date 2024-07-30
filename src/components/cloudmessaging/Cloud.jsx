@@ -80,7 +80,7 @@ const Cloud = () => {
           </div>
           <div className="border border-solid border-gray-400  py-2 px-6 bg-gray-100">
             {/* <div className={`${flexRow2} space-x-16`}> */}
-            <div class>
+            <div>
               <p className={`${paragraph8}`}>Sender ID</p>
             </div>
 

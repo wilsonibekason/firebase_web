@@ -17,6 +17,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.1",
+    "immer": "^10.1.1",
     "mdx-utils": "^0.2.0",
     "moment": "^2.29.4",
     "primeflex": "^3.2.1",
@@ -30,7 +31,8 @@
     "react-router-dom": "^6.3.0",
     "react-syntax-highlighter": "^15.5.0",
     "redux-logger": "^3.0.6",
-    "three": "^0.144.0"
+    "three": "^0.144.0",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

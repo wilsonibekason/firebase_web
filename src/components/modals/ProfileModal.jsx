@@ -1,20 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Transition, Dialog } from "@headlessui/react";
-import { useDispatch, useSelector, connect } from "react-redux";
-import {
-  closeDropdown,
-  openDropdown,
-} from "../../redux/features/globalStateSlice/globalStateSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { closeDropdown } from "../../redux/features/globalStateSlice/globalStateSlice";
 import styles from "../../styles/firebaseCustomStyles";
 import { useIconContext } from "../../services/OnIconContext";
-import { profile } from "../../assets";
 import { wilsonImg } from "../../assets/images";
+
 const ProfileModal = () => {
   const dispatch = useDispatch();
   const dropdownState = useSelector(
     (state) => state.GlobalState.onOpenDropdown
   );
   const closeDropdownRef = () => dispatch(closeDropdown());
+
+  const [hiddenAccounts, setHiddenAccounts] = useState(new Set());
+
   const {
     flexCol7,
     flexRowMain,
@@ -24,169 +24,127 @@ const ProfileModal = () => {
     paragraph12,
     flexStart,
   } = styles;
+
   const { FiUserPlus, AiFillCamera } = useIconContext();
+
+  const handleHideAccount = (index) => {
+    setHiddenAccounts((prev) => new Set(prev).add(index));
+  };
+
   return (
-    <>
-      <div>
-        <Transition appear show={dropdownState} as={Fragment}>
-          <Dialog
-            as="div"
-            className={`relative z-10`}
-            onClose={closeDropdownRef}
-          >
+    <Transition appear show={dropdownState} as={Fragment}>
+      <Dialog as="div" className="relative z-10" onClose={closeDropdownRef}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-500"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-400"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black bg-opacity-30"></div>
+        </Transition.Child>
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center py-4 text-center">
             <Transition.Child
               as={Fragment}
-              enter={"ease-out duration-500 "}
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
+              enter="ease-out duration-500"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
               leave="ease-in duration-400"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
             >
-              <div className={`fixed inset-0 bg-black bg-opacity-0`}></div>
-            </Transition.Child>
-            <div className={`fixed top-0  overflow-y-auto `}>
-              <div className="flex min-h-full max-h-max w-screen items-center justify-center py-4 text-center">
-                <Transition.Child
-                  as={Fragment}
-                  enter={"ease-out duration-500 "}
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-400 "
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel
-                    className={`w-1/4 min-h-[30rem] overflow-y-auto scrollbar-thumb-slate-400 scrollbar-thin scrollbar-thumb-rounded-lg my-7 ml-[65rem] bg-white py-4    transition-all rounded-lg`}
-                  >
-                    <div className={`${flexCol7}`}>
-                      {/* first container content */}
-                      <div className={`${flexCol7} px-6 py-4 space-y-3`}>
-                        <div className={`${flexCentered}    `}>
-                          <div
-                            className={`border border-solid border-gray-500 p-3 rounded-full relative`}
-                          >
-                            <img
-                              src={wilsonImg}
-                              alt=""
-                              className="w-16 h-16 object-cover rounded-full cursor-pointer"
-                            />
-                            <div
-                              className={`absolute right-0 bottom-1 p-1 bg-white shadow-lg rounded-full`}
-                            >
-                              <AiFillCamera
-                                className={`text-black cursor-pointer hover:opacity-50 transition duration-150 `}
-                                size={20}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={`${flexCol7} items-center`}>
-                          <h4 className={`${paragraph13} text-gray-900`}>
-                            {" "}
-                            wilson ibekason
-                          </h4>
-                          <h4 className={`${paragraph13} text-gray-500`}>
-                            {" "}
-                            wilsonibekason@gmail.com
-                          </h4>
-                        </div>
-                        <div className={`${flexCentered}`}>
-                          <div className={`py-1 px-3 rounded-lg shadow `}>
-                            <h4
-                              className={`${paragraph13} text-gray-500 font-helveticaNeueMed font-bold tracking-wider cursor-pointer`}
-                            >
-                              manage your google account
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      {/* border  */}
-                      <div
-                        className={`border-t border-solid border-gray-200`}
+              <Dialog.Panel className="w-96 min-h-[30rem] max-h-[80vh] overflow-y-auto bg-white p-6 rounded-lg shadow-lg ml-[65rem]">
+                <div className="space-y-6">
+                  {/* Profile Info */}
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="relative">
+                      <img
+                        src={wilsonImg}
+                        alt="Profile"
+                        className="w-16 h-16 object-cover rounded-full cursor-pointer"
                       />
-                      <div
-                        className={`${flexCol7} px-6 ${flexCentered} space-y-3 py-4`}
-                      >
-                        <div
-                          className={`${flexRowMain} items-center space-x-3`}
-                        >
-                          <div
-                            className={`w-8 h-8 rounded-full shadow ${flexCentered}`}
-                          >
-                            <p
-                              className={`${paragraph12} text-gray-800 text-lg`}
-                            >
-                              w
-                            </p>
-                          </div>
-                          <div
-                            className={`${flexCol7} ${flexStart} leading-tight`}
-                          >
-                            <h4
-                              className={`${paragraph13} text-gray-600 font-robotoCondensed tracking-wider font-normal `}
-                            >
-                              wilsonibekason
-                            </h4>
-                            <h4
-                              className={`${paragraph13} text-gray-600 font-helveticaNeueMed tracking-wider font-normal`}
-                            >
-                              wanbekgithub.com
-                            </h4>
-                          </div>
-                        </div>
-                        <div
-                          className={`${flexRowMain} items-center space-x-3`}
-                        >
-                          <div>
-                            <FiUserPlus className={`text-gray-600`} />
-                          </div>
-                          <div className={`${flexCol7}`}>
-                            <h4
-                              className={`${paragraph13} text-gray-600 font-robotoCondensed cursor-pointer`}
-                            >
-                              Add another account
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      {/* border  */}
-                      <div
-                        className={`border-t border-solid border-gray-200`}
-                      />
-                      <div className={`${flexCol7} px-6 py-4 space-y-3`}>
-                        <div className={`${flexCentered}`}>
-                          <div className={`py-1 px-3 rounded-lg shadow`}>
-                            <h4
-                              className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal cursor-pointer`}
-                            >
-                              {" "}
-                              sign out of all devices
-                            </h4>
-                          </div>
-                        </div>
-                        <div className={`${flexBetween}`}>
-                          <p
-                            className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal tracking-wide cursor-pointer`}
-                          >
-                            privacy policy
-                          </p>
-                          <p
-                            className={`${paragraph13} text-gray-500 font-robotoCondensed font-normal tracking-wide cursor-pointer`}
-                          >
-                            terms of services
-                          </p>
-                        </div>
+                      <div className="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow-lg">
+                        <AiFillCamera
+                          className="text-black cursor-pointer hover:opacity-50 transition duration-150"
+                          size={20}
+                        />
                       </div>
                     </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
-      </div>
-    </>
+                    <div className="text-center">
+                      <h4 className="text-gray-900 text-lg">Wilson Ibekason</h4>
+                      <h4 className="text-gray-500 text-sm">
+                        wilsonibekason@gmail.com
+                      </h4>
+                    </div>
+                    <div>
+                      <button className="py-2 px-4 rounded-full bg-gray-100 text-gray-700 font-semibold">
+                        Manage your Google account
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Accounts List */}
+                  <div className="space-y-4">
+                    {Array.from(
+                      { length: 5 },
+                      (_, index) =>
+                        !hiddenAccounts.has(index) && (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between space-x-3"
+                          >
+                            <div className="flex items-center space-x-3">
+                              <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                <span className="text-gray-800">W</span>
+                              </div>
+                              <div className="text-start">
+                                <h4 className="text-gray-800 text-sm">
+                                  wilsonibekason
+                                </h4>
+                                <h4 className="text-gray-600 text-xs">
+                                  wanbekgithub@gmail.com
+                                </h4>
+                              </div>
+                            </div>
+                            <button
+                              className="text-gray-500 hover:text-gray-700"
+                              onClick={() => handleHideAccount(index)}
+                            >
+                              Hide
+                            </button>
+                          </div>
+                        )
+                    )}
+                    <div className="flex items-center space-x-3">
+                      <FiUserPlus className="text-gray-600" />
+                      <h4 className="text-gray-600 cursor-pointer">
+                        Add another account
+                      </h4>
+                    </div>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <button className="py-2 px-4 rounded-full bg-gray-100 text-gray-700 font-semibold">
+                        Sign out of all devices
+                      </button>
+                    </div>
+                    <div className="flex justify-between text-gray-500 text-sm">
+                      <p className="cursor-pointer">Privacy Policy</p>
+                      <p className="cursor-pointer">Terms of Service</p>
+                    </div>
+                  </div>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition>
   );
 };
 
